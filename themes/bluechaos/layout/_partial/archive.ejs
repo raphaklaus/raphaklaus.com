@@ -1,5 +1,6 @@
 <!-- <% if (pagination == 2){ %> -->
   <section>
+    <h2 class="recent">Recent articles</h2>
     <% page.posts.each(function(post){ %>
       <%- partial('article-brief', {post: post, index: true}) %>
     <% }) %>
