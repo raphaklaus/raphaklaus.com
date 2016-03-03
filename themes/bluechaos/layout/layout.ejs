@@ -3,25 +3,28 @@
   <head>
     <meta charset="utf-8">
     <!-- Social media meta tags -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css"> -->
     <%- css('css/styles') %>
+    <%- css('css/highlight') %>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300">
+    <% if (config.highlight.enable){ %>
+      <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    <% } %>    
     <title>Raphael D. Pinheiro</title>
   </head>
   <body>
     <nav>
-      <%- image_tag(gravatar('raphaklaus@gmail.com',150), {class: 'avatar'}) %>
-      <video autobuffer muted autoplay autoloop loop nocontrols>
-        <!-- <source src="/media/video.oga"> -->
+      <%- image_tag(gravatar('raphaklaus@gmail.com', 150), {class: 'avatar'}) %>
+      <video autobuffer autoplay autoloop loop nocontrols>
+          <source src="/media/cssbackground.mp4" type="video/mp4"> 
+      </video>
+<!--       <video autobuffer autoplay autoloop loop nocontrols>
         <source src="/media/cssbackground.mp4" type="video/mp4">
-        <!-- <object type="video/ogg" data="/media/video.oga" width="320" height="240"> -->
-        <!-- <param name="src" value="/media/video.oga"> -->
         <param name="autoplay" value="true">
         <param name="autoStart" value="1">
-        </object>
-      </video>
+      </video> -->
       <h4 class="my-name">Raphael D. Pinheiro</h4>
       <small class="title">Software Developer</small>
-      <hr>
       <ul>
         <li><b><a href="" title="">About</a></b></li>
         <li><b><a href="" title="">Articles</a></b></li>
@@ -29,5 +32,6 @@
       </ul>
     </nav>    
     <%- body %>
+    <%- partial('_partial/after-footer') %>
   </body>
 </html>

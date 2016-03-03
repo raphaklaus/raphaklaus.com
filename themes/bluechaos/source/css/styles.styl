@@ -1,7 +1,7 @@
 body
 html
   display: flex
-  font-size: 16px
+  // font: 16px/1 sans-serif
   -moz-osx-font-smoothing: grayscale
   -webkit-font-smoothing: antialiased
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
@@ -12,27 +12,9 @@ html
   z-index: -2
   
 a
-  font-size: 20px
   text-decoration: none
-  color: #ddd
-
-a:visited
-  color: #ddd
-
-a:hover
-  color: white
-
-ul
-  list-style-type: none
-  padding: 0
-  text-align: center
-  width: 100%
-  z-index: 1
-  li
-    margin-bottom: 10px
 
 nav
-  background-color: #333
   color: white
   display: flex
   flex-direction: column
@@ -40,6 +22,24 @@ nav
   height: 100%
   padding: 15px 10px 15px 10px
   width: 35%
+  a
+    font-size: 20px
+    color: #ddd
+
+  a:visited
+    color: #ddd
+
+  a:hover
+    color: white
+
+  ul
+    list-style-type: none
+    padding: 0
+    text-align: center
+    width: 100%
+    z-index: 1
+    li
+      margin-bottom: 10px  
 
 section
   background-color: #eee
@@ -50,11 +50,16 @@ section
   height: 100%
   overflow-x: hidden
   z-index: 1
-  padding: 10px
+  padding: 20px    
+  hr
+    border: 0
+    border-top 1px solid #ccc   
+    width: 90%
 
 article
   color: #666
-  height: 100%
+  height: auto
+  padding: 30px 0 30px
   width: 100%
   a:visited
     color: black
@@ -72,26 +77,40 @@ article
 .title
   z-index: 1
 
-hr
-  border: 0
-  border-top 1px solid #aaa
-  width: 100%
-  
 video
   position: absolute
+  border: 0
+  padding: 0
+  margin: 0
   top: 0
   left: 0
+  // transform: translate(0,-25%)
   height: 100%
-  -webkit-filter: grayscale(100%) blur(3px) sepia(100%)
-  z-index: 0
+  filter: grayscale(100%) sepia(100%)
+  z-index: -1000
   
 .recent
   text-align: center
   color: #542F00
   
 .article-header
-  h1
+  h2
     text-align: center
+    margin-top: 0
     a
       color: #3E2601
+      &:hover
+        color: #774800
   
+.article-photo
+  a
+    display: flex
+    height: 400px
+    justify-content: center
+    img
+      width: 90%
+  // // display: flex
+  // img
+  //   // height: 600px
+  // max-width: 90%
+  // height: auto

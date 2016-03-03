@@ -1,35 +1,9 @@
-<!-- <% if (pagination == 2){ %> -->
-  <section>
-    <h2 class="recent">Recent articles</h2>
-    <% page.posts.each(function(post){ %>
-      <%- partial('article-brief', {post: post, index: true}) %>
-    <% }) %>
-  </section>
-<!--<% } else { %>
-  <% var last; %>
+<section>
+  <h2 class="recent">Recent articles</h2>
   <% page.posts.each(function(post, i){ %>
-    <% var year = post.date.year(); %>
-    <% if (last != year){ %>
-      <% if (last != null){ %>
-        </div></section>
-      <% } %>
-      <% last = year; %>
-      <section>
-        <div>
-          <a href="<%- url_for(config.archive_dir + '/' + year) %>"><%= year %></a>
-        </div>
-    <% } %>
-    <%- partial('archive-post', {post: post, even: i % 2 == 0}) %>
+    <%- partial('article-brief', {post: post, index: true}) %>
+    <% if(i < page.posts.length - 1){%>
+      <hr>
+    <% }%>
   <% }) %>
-  <% if (page.posts.length){ %>
-    </section>
-  <% } %>
-<% } %>
-<% if (page.total > 1){ %>
-  <nav id="page-nav">
-    <%- paginator({
-      prev_text: "&laquo; __('prev')",
-      next_text: "__('next') &raquo;"
-    }) %>
-  </nav>
-<% } %> -->
+</section>
