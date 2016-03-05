@@ -1,0 +1,7 @@
+<% if (post.cover){ %>
+  <div class="article-photo">
+      <a href="<%- url_for(post.path) %>" rel="gallery_<%= post._id %>">
+        <img class="article-photo" src="<%- url_for(post.cover) %>" itemprop="image">
+      </a>
+  </div>
+<% } %>
