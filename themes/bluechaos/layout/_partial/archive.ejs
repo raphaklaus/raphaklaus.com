@@ -1,5 +1,6 @@
 <section>
-  <h2 class="recent">Recent articles</h2>
+  <h3 class="recent">Recent articles</h3>
+  <hr>
   <% page.posts.each(function(post, i){ %>
     <%- partial('article-brief', {post: post, index: true}) %>
     <% if(i < page.posts.length - 1){%>

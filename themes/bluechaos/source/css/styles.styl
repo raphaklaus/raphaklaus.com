@@ -6,7 +6,7 @@ html
   -webkit-font-smoothing: antialiased
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
   height: 100%
-  width: 100%
+  // width: 100%
   margin: 0
   padding: 0
   overflow: hidden
@@ -21,7 +21,9 @@ p
 
 for num in (1..3)
   h{num}
+    // font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif
     font-size: (2.5 - .5 * num)rem
+    font-weight: 800
     text-align: center
 
 h1
@@ -31,8 +33,6 @@ a
   text-decoration: none
 
 nav
-  @media screen and (max-width: 640px)
-    display: none
   color: white
   display: flex
   flex-direction: column
@@ -63,14 +63,13 @@ section
   display: flex
   flex-direction: column
   overflow: auto
-  width: 100%
-  height: 100%
+  // width: 100%
   overflow-x: hidden
   z-index: 1
   padding: 25px    
   hr
     border: 0
-    border-top 1px solid #39342B
+    border-top 1px solid rgba(57, 52, 43, 0.21)
     width: 30%
 
 article
@@ -81,18 +80,21 @@ article
     color: #666
 
 .avatar
-  border-radius: 100px
+  filter: grayscale(100%) sepia(30%)
   z-index: 1
-  -webkit-filter: grayscale(100%) sepia(30%)
+  border-radius: 100px
   
 .my-name
   color: #dedede
-  font-family: "Open Sans", sans-serif
+  font-family: "Aller", sans-serif
   margin-bottom: 0
   font-weight: 100
   z-index: 1
+  
+.menu
+  font-family: "Oswald"
 
-.title
+.position
   z-index: 1
 
 video
@@ -103,12 +105,20 @@ video
   top: 0
   left: 0
   height: 100%
-  filter: grayscale(100%) sepia(100%) contrast(.9)
+  filter: grayscale(80%) sepia(30%)
   z-index: -1000
   
 .recent
-  text-align: center
-  color: #542F00
+  text-align: left
+  margin-top: 0
+  margin-bottom: 5px
+  margin-left: auto
+  margin-right: auto
+  width: 90%
+  color: #736A5F
+  + hr
+    margin: 0 auto 0 auto
+    width: 90%
   
 .article-header
   h2
@@ -126,9 +136,6 @@ video
       margin-left: auto
       margin-right: auto
       width: 90%  
-      
-// .article-title
-//   margin: 0 10px 0 10px
 
 .article-entry
   blockquote
@@ -161,4 +168,61 @@ video
     text-align: left
     margin-left: auto
     margin-right: auto
-// REMOVE FLEXBOX DUE IE BUG!!
+
+.article-date
+  margin: 0 auto 0 auto
+  width: 90%
+  
+.header-border
+  border-left: 5px solid gray
+  a
+    margin-left: 10px
+    display: inline-block
+
+// REMOVE FLEXBOX DUE IE11 BUG!!
+
+
+@media screen and (max-width: 720px)
+  html
+  body
+    height: auto
+    flex-direction: column
+    overflow: visible
+  nav
+    background-color: #2e2e2e
+    display: flex
+    flex-direction: initial
+    justify-content: space-between
+    height: 50px
+    width: 100%
+    padding: 0
+    z-index: 1
+    .menu
+      display: flex
+      flex-direction: column
+      height: 400px
+      background-color: #414141
+    .hamburguer
+      width: 20px
+      height: 20px
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      margin: 0 10px 0 0
+      .line
+        background-color: #ddd
+        height: 2px
+        width: 100%
+      &:hover
+        .line:nth-child(1)
+          transform: translateY(-2px)
+        .line:nth-child(3)
+          transform: translateY(2px)          
+    video
+      display: none
+  .my-name
+    align-self: center
+    margin: 0 0 0 10px
+  .avatar
+  .position
+    display: none

@@ -9,6 +9,8 @@
     <%- css('css/highlight') %>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:800' rel='stylesheet' type='text/css'>
+    <%- css('css/font-face') %>
+    <!-- <link rel="stylesheet" type="text/css" href="../source/css/font-face.css"> -->
     <% if (config.highlight.enable){ %>
       <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
     <% } %>    
@@ -21,11 +23,18 @@
           <source src="/media/cssbackground.mp4" type="video/mp4"> 
       </video>
       <h2 class="my-name">Raphael D. Pinheiro</h2>
-      <small class="title">Software Developer</small>
-      <ul>
-        <li><b><a href="" title="">Sobre</a></b></li>
-        <li><b><a href="" title="">Artigos</a></b></li>
-        <li><b><a href="" title="">Projetos</a></b></li>
+      <small class="position">Software Developer</small>
+      <a href="" title="">
+        <span class="hamburguer">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </span>
+      </a>
+      <ul class="menu">
+        <li><a href="" title="">Sobre</a></li>
+        <li><a href="" title="">Artigos</a></li>
+        <li><a href="" title="">Projetos</a></li>
       </ul>
     </nav>    
     <%- body %>
