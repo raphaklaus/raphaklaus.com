@@ -70,4 +70,7 @@ theme: bluechaos
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: https://github.com/raphaklaus/raphaklaus.com
+  branch: master
+  message: Deploy done!
