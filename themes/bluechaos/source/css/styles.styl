@@ -1,6 +1,6 @@
 body
 html
-  background-color: #2e2e2e
+  background-color: #EEEEEE
   display: flex
   font-size: 100%
   -moz-osx-font-smoothing: grayscale
@@ -12,7 +12,7 @@ html
   padding: 0
   overflow: hidden
   vertical-align: baseline;
-  z-index: -2
+  // z-index: -2
   // line-height: 1;
 small
   font-size: 0.85rem
@@ -40,6 +40,8 @@ nav
   height: 100%
   padding: 35px 10px 15px 10px
   width: 30%
+  *
+    z-index: 0
   a
     font-size: 1.25rem
     // font-family: "Source Code Pro"
@@ -54,17 +56,13 @@ nav
     padding: 0
     text-align: center
     width: 100%
-    z-index: 1
     li
       margin-bottom: 10px
       
 section
   background-color: #eee
-  display: flex
-  flex-direction: column
   overflow: auto
-  width: auto
-  overflow-x: hidden
+  width: 100%
   z-index: 1
   padding: 25px    
   hr
@@ -76,8 +74,20 @@ article
   color: #666
   padding: 30px 0 30px
   width: 100%
-  a:visited
+  a
     color: #666
+
+#post-sobre
+#post-projetos
+  a
+    color: tomato
+    border-bottom: 1px solid tomato
+    &:visited
+      color: tomato
+      border-bottom: 1px solid tomato
+    &:hover
+      color: #D2513A
+      border-bottom: 1px solid #D2513A
 
 .avatar
   filter: grayscale(100%) sepia(30%)
@@ -112,7 +122,7 @@ video
   left: 0
   height: 100%
   filter: grayscale(80%) sepia(30%)
-  z-index: -1000
+  z-index: 0
   
 .recent
   text-align: left
@@ -236,6 +246,10 @@ video
           transform: translateY(2px)          
     video
       display: none
+  section
+    width: auto
+    overflow: initial;
+    // height: 100%
   .my-name
     display: inline
     text-align: left
@@ -258,16 +272,3 @@ video
 
   .invisible
     display: none !important
-
-  .opened
-    // opacity: 1
-    // animation: openAnimation
-    // animation-duration: 1s
-    // display: flex !important
-    
-  .closed
-    // opacity: 0
-    // animation: closeAnimation
-    // animation-duration: 1s
-    // animation-fill-mode: forwards
-    
