@@ -41,7 +41,7 @@ Antes de começarmos é **importante** saber qual linguagem está usando, qual s
 
 loremLorem ipsum dolor sit amet, consectetur adipisicing elit. Dare naturales fugiendus late iudex praeclare maestitiam campum. Nulli faciendum maxime faciam theseo novi dicunt beata discidia, summam ait democritea probatum debet. Beatae vi dum negarent, admirer bonas evertitur ultimum scriptum petentium velint collegisti modis, dividendo avocent tradit, invidus persequeris admonitionem.
 
-![](/usando-travi-ci/traviscimeme.png)
+![](/artigos/usando-travi-ci/construction.jpg)
 
 Nulli faciendum maxime faciam theseo novi dicunt beata discidia, summam ait democritea probatum debet. Beatae vi dum negarent, admirer bonas evertitur ultimum scriptum petentium velint collegisti modis, dividendo avocent tradit, invidus persequeris admonitionem.
 
