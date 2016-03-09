@@ -14,14 +14,14 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://raphaklaus.com
 root: /
-permalink: :title/
+permalink: artigos/:title/
 permalink_defaults:
 
 # Directory
 source_dir: source
 public_dir: public
 tag_dir: tags
-archive_dir: archives
+archive_dir: artigos
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
@@ -70,7 +70,14 @@ theme: bluechaos
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo: https://github.com/raphaklaus/raphaklaus.com
-  branch: master
-  message: Deploy done!
+  type: rsync
+  host: 107.170.155.57
+  user: Deployer
+  root: /root/raphaklaus.com
+  port: 22
+  delete: [true]
+  verbose: [true]
+  ignore_errors: [false]
+
+exclude_generators:
+- index

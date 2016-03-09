@@ -7,5 +7,13 @@
     <% } %>
     <%- partial('post/cover') %>
     <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
+    <% if (post.excerpt && index){ %>
+      <%- post.excerpt %>
+      <% if (theme.excerpt_link){ %>
+        <p class="article-more-link">
+          <a href="<%- url_for(post.path) %>"><%= theme.excerpt_link %></a>
+        </p>
+      <% } %>
+    <% } %>     
   </div>
 </article>

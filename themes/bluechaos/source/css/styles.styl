@@ -12,8 +12,7 @@ html
   padding: 0
   overflow: hidden
   vertical-align: baseline;
-  // z-index: -2
-  // line-height: 1;
+
 small
   font-size: 0.85rem
   
@@ -22,7 +21,7 @@ p
 
 for num in (1..3)
   h{num}
-    font-family: "Tabarra", "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
     font-size: (2.3 - .5 * num)rem
     text-align: center
 
@@ -31,8 +30,29 @@ h1
 
 a
   text-decoration: none
+  
+.menu-link
+  a
+    font-size 1.25rem
+    color: #ddd
+    &:visited
+      color: #ddd
+    &:hover
+      color: white  
+
+.colored-link
+  a
+    color: tomato
+    border-bottom: 1px solid tomato
+    &:visited
+      color: tomato
+      border-bottom: 1px solid tomato
+    &:hover
+      color: #F9845F
+      border-bottom: 1px solid #F9845F
 
 nav
+  @extends .menu-link
   color: white
   display: flex
   flex-direction: column
@@ -42,16 +62,8 @@ nav
   width: 30%
   *
     z-index: 0
-  a
-    font-size: 1.25rem
-    // font-family: "Source Code Pro"
-    color: #ddd
-  a:visited
-    color: #ddd
-  a:hover
-    color: white
   ul
-    // font-weight: 400
+    font-weight: 400
     list-style-type: none
     padding: 0
     text-align: center
@@ -74,28 +86,41 @@ article
   color: #666
   padding: 30px 0 30px
   width: 100%
-  a
-    color: #666
+  .article-brief
+    .article-title
+      color: inherit    
+    .article-more-link
+      @extends .colored-link
+    .article-date
+      margin-bottom: 10px
+    p
+      margin: 0 auto 0 auto
+      width: 70%
 
-#post-sobre
-#post-projetos
-  a
-    color: tomato
-    border-bottom: 1px solid tomato
-    &:visited
-      color: tomato
-      border-bottom: 1px solid tomato
-    &:hover
-      color: #D2513A
-      border-bottom: 1px solid #D2513A
+
+#page-sobre
+  @extends .colored-link
+  width: 90%
+  h1
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+    text-align: left
+
+#page-projetos
+  width: 90%
+  @extends .colored-link
+  img
+    width: 70%
+  h1
+  h2
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+    text-align: left
 
 .avatar
-  filter: grayscale(100%) sepia(30%)
+  filter: grayscale(95%) sepia(35%)
   z-index: 1
   border-radius: 100px
   
 .my-name
-  color: #dedede
   font-family: "Aller", sans-serif
   margin-bottom: 0
   font-weight: 100
@@ -104,11 +129,6 @@ article
 .menu
   font-family: "Oswald"
   height: auto
-
-.closed
-.opened
-  // display: flex !important
-  opacity: 1 !important
 
 .position
   z-index: 1
@@ -151,7 +171,7 @@ video
       display: block
       margin-left: auto
       margin-right: auto
-      width: 90%  
+      width: 70%
 
 .article-entry
   blockquote
@@ -176,27 +196,22 @@ video
     margin-left: auto
     margin-right: auto
     width: 100%
-    
+
 .article-brief
   h1
     margin-bottom: 10px
-    width: 90%
-    text-align: left
+    width: 80%
     margin-left: auto
     margin-right: auto
 
 .article-date
   margin: 0 auto 0 auto
-  width: 90%
+  width: 70%
   
-.header-border
-  border-left: 5px solid gray
+.header-archive
+  text-align: center
   a
-    margin-left: 10px
     display: inline-block
-
-// REMOVE FLEXBOX DUE IE11 BUG!!
-
 
 @media screen and (max-width: 720px)
   html
@@ -204,11 +219,17 @@ video
     height: auto
     flex-direction: column
     overflow: visible
+  for num in (1..3)
+    h{num}
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+      font-size: (1.6 - .3 * num)rem
+      text-align: center
   nav
     padding: 0
     width: auto
     height: auto
     .header-info
+      @extends .menu-link
       background-color: #2e2e2e
       display: block
       height: auto
@@ -217,24 +238,22 @@ video
       z-index: 2
     .menu
       background-color: #353535
-      // display: none 
+      padding-top: 10px
       display: flex
       flex-direction: column
       margin-top: 10px
       margin: 0
       li
         align-self: center
-    a
-      float: right
-      margin-top: 5px
     .hamburguer
+      float: right
       right: 15px
       width: 20px
       height: 20px
       display: flex
       flex-direction: column
       justify-content: space-between
-      margin: 0 10px 0 0
+      margin: 2px 10px 0 0
       .line
         background-color: #ddd
         height: 2px
@@ -249,26 +268,25 @@ video
   section
     width: auto
     overflow: initial;
-    // height: 100%
+  article
+    .article-brief
+      h1
+        width: 100%    
+      p
+        margin: 0 auto 0 auto
+        width: 80%
+  .article-photo
+    a
+      img
+        width: 80%
   .my-name
     display: inline
+    font-size: 1.3rem
     text-align: left
     margin: 0 0 0 10px
   .avatar
   .position
     display: none
-  
-  @keyframes closeAnimation
-    from
-      opacity: 1
-    to
-      opacity: 0
-
-  @keyframes openAnimation
-    from
-      opacity: 0
-    to
-      opacity: 1
 
   .invisible
     display: none !important

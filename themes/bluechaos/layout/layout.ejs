@@ -4,40 +4,40 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- Social media meta tags -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css"> -->
+    <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
     <%- css('css/styles') %>
     <%- css('css/highlight') %>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:800' rel='stylesheet' type='text/css'>
     <%- css('css/font-face') %>
-    <!-- <link rel="stylesheet" type="text/css" href="../source/css/font-face.css"> -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css'>
     <% if (config.highlight.enable){ %>
       <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-    <% } %>    
+    <% } %>
+    <%- partial('_partial/google-analytics') %>
     <title>Raphael D. Pinheiro</title>
   </head>
   <body>
     <nav>
-      <%- image_tag(gravatar('raphaklaus@gmail.com', 150), {class: 'avatar'}) %>
       <video autobuffer autoplay autoloop loop nocontrols>
           <source src="/media/cssbackground.mp4" type="video/mp4"> 
       </video>
-      <div class="header-info">
-        <h2 class="my-name">
-          Raphael D. Pinheiro
-          <a href="#" onclick="toggleMenu()">
-            <span class="hamburguer">
-              <span class="line"></span>
-              <span class="line"></span>
-              <span class="line"></span>
-            </span>
+        <%- image_tag(gravatar('raphaklaus@gmail.com', 150), {class: 'avatar'}) %>
+        <div class="header-info">
+          <a href="/">
+            <h2 class="my-name">
+                Raphael D. Pinheiro
+            </h2>
           </a>
-        </h2>
-      </div>
-      <small class="position">Software Developer</small>
+          <a href="#" class="hamburguer" onclick="toggleMenu()">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </a>
+        </div>
+        <small class="position">Software Developer</small>
       <ul class="menu invisible">
-        <li><a href="/sobre" title="">Sobre</a></li>
-        <li><a href="/" title="">Artigos</a></li>
+        <li><a href="/" title="">Sobre</a></li>
+        <li><a href="/artigos" title="">Artigos</a></li>
         <li><a href="/projetos" title="">Projetos</a></li>
       </ul>
     </nav>    

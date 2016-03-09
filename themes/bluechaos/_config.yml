@@ -1,12 +1,12 @@
 # Header
 menu:
   Home: /
-  Archives: /archives
+  Archives: /archive
 rss: /atom.xml
 
 # Content
-excerpt_link: Read More
-fancybox: true
+excerpt_link: Leia mais
+fancybox: false
 
 # Sidebar
 sidebar: left
@@ -28,7 +28,7 @@ archive_type: 'monthly'
 show_count: false
 
 # Miscellaneous
-google_analytics:
+google_analytics: UA-74900050-1
 favicon: /favicon.png
 twitter:
 google_plus:

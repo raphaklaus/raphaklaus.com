@@ -3,18 +3,20 @@ title: Usando travis-ci para build e automação de testes contínuo
 date: 2016-03-02 21:15:59
 article: true
 tags:
-cover: /usando-travi-ci/traviscimeme.png
+cover: artigos/usando-travi-ci/construction.jpg
 ---
 
 Eu já me senti como você quando o assunto era testes... ZZzzzzzZ... 
+Com o travis-ci tudo fica muito mais facil. Quanto? Quanto essa linha de código abaixo.
+
+<!-- more -->
 
 > Ahh.. Terei que criar os testes, e depois rodar, grande coisa... Depois tenho que ficar rodando ele no servidor... 
-
-Com o travis-ci tudo fica muito mais facil. Quanto? Quanto essa linha de código abaixo.
 
 ```javascript
   var asd = '';
 ```
+
 
 ## Configurando o .travis.yrl
 
