@@ -1,19 +1,19 @@
-categories: Categories
-search: Search
+categories: Categorias
+search: Busca
 tags: Tags
 tagcloud: Tag Cloud
 tweets: Tweets
-prev: Prev
-next: Next
-comment: Comments
-archive_a: Archives
-archive_b: "Archives: %s"
-page: Page %d
-recent_posts: Recent Posts
-newer: Newer
-older: Older
-share: Share
+prev: Anterior
+next: Próximo
+comment: Comentários
+archive_a: Artigos
+archive_b: "Artigos: %s"
+page: Página %d
+recent_posts: Posts recentes
+newer: Novos
+older: Velhos
+share: Compartilhar
 powered_by: Powered by
 rss_feed: RSS Feed
-category: Category
+category: Categoria
 tag: Tag

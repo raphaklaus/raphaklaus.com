@@ -81,3 +81,6 @@ deploy:
 
 exclude_generators:
 - index
+
+nofollow:
+    enable: true
