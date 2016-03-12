@@ -72,7 +72,7 @@ theme: bluechaos
 deploy:
   type: rsync
   host: 107.170.155.57
-  user: Deployer
+  user: root
   root: /root/raphaklaus.com
   port: 22
   delete: [true]
