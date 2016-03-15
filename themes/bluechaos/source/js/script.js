@@ -17,3 +17,9 @@ function toggleMenu(){
   // });  
 }
 
+Zepto(function($){
+  console.log('foi?')
+  if ($(window).width() > 720){
+    $('nav > video').append('<source src="/media/cssbackground.mp4" type="video/mp4">');
+  }
+});
