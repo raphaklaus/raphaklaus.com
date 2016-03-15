@@ -1,5 +1,5 @@
 ---
-title: "Troubleshooting em programação: você sabe como está o seu nível nesta habilidade?"
+title: "Troubleshooting: você sabe como está o seu nível nesta habilidade?"
 article: true
 date: 2016-03-10 23:39:48
 tags: troubleshooting, programação, solução
@@ -10,7 +10,7 @@ Já aconteceu de você modificar umas linhas de código e mais para frente o tes
 
 <!-- more -->
 
-Ou então instalar um novo plugin e não funcionar de jeito nenhum. Mesmo seguindo todos os passos da documentação? Vou deixar algumas dicas uteis nesse artigo.
+Ou então, instalar um novo plugin e não funcionar de jeito nenhum mesmo seguindo todos os passos da documentação? Vou deixar algumas dicas uteis nesse artigo.
 
 Existem diversos cenários em que essa habilidade é valiosa, e para cada um desses uma abordagem diferente deve ser tomada. Vou levantar alguns:
 
@@ -30,13 +30,13 @@ Uma das maneiras mais eficientes de se solucionar um problema é saber como algu
 
 ![Resultado de pesquisa do GitHub](/artigos/troubleshooting/github-search.png)
 
-Na parte superior esquerda do [GitHub](http://github.com) tem um campo para busca. Use esse campo com os trechos referentes à ferramenta que esta tendo problema e encontre milhares de códigos que também a usam. Assim você poderá ver se tem alguma diferença que faz esse código funcionar e o seu não. Pode até mesmo baixar o repositório e testar em seu ambiente!
+Na parte superior esquerda do [GitHub](http://github.com) tem um campo para busca. Use esse campo com os trechos referentes à ferramenta que está tendo problema e encontre milhares de códigos que também a usam. Assim você poderá ver se tem alguma diferença que faz esse código funcionar e o seu não. Pode até mesmo baixar o repositório e testar em seu ambiente!
 
 ## O mais comum: você pode ter mudado algo no código sem perceber
 
 Nessa situação, o melhor a se fazer é voltar a um ponto do código que você **sabe** que tudo funcionava conforme o esperado, e ir adicionando sua funcionalidade linha à linha. Em algum momento seu código vai quebrar e você estará mais perto de saber o porquê.
 
-Se você não entende o motivo da linha que causa o problema fazer seu código parar, é porque provavelmente é uma função que **esconde comportamentos encapsulados**. Você terá que compreender o que a função está fazendo. A melhor forma é abrir essa função e estuda-la, ou se for de terceiros (biblioteca, plugin, etc), procure a documentação na internet.
+Se você não entende o motivo da linha que causa o problema fazer seu código parar, é porque provavelmente é uma função que **esconde comportamentos encapsulados**. Você terá que compreender o que a função está fazendo. A melhor forma é abrir essa função e estudá-la, ou se for de terceiros (biblioteca, plugin, etc), procure a documentação na internet.
 
 ## Dependência atualizada
 
