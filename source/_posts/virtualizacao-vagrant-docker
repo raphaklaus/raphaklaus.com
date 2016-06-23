@@ -1,1 +1,23 @@
-# Todo
+O que é o Vagrant:
+
+O Vagrant te permite criar ambientes de desenvolvimento portáveis, leves e replicáveis. Por meio de Virtual Machines (VMs), 
+é possível obter um ambiente de desenvolvimento com tudo já configurado em poucos minutos. Completamente pronto para desenvolvimento. 
+
+Vamos supor a seguinte situação:
+
+Você chega numa empresa nova, onde você trabalhará com a stack LAMP... Você terá de instalar o Apache, MySQL, PHP e depois perder um
+tempinho configurando eles... Além de ter que instalar alguns pacotes específicos do projeto que irá trabalhar...
+
+Imagine agora te passarem um arquivo que ao executar, cria todo o ambiente necessário para rodar a aplicação, com todos os
+serviços instalados, configurados, bastando você fazer apenas algumas configurações de preferência e pronto! Ah! E melhor, completamente 
+isolado da sua máquina (seja ela, Linux, Mac ou Windows), sem você precisar "sujar" sua máquina.
+
+Essa é a proposta do Vagrant. 
+
+A instalação dele é muito facil, não vou entrar nesses detalhes aqui, até porque no site tem uma documentação muito completa e boa.
+[Vagrant](https://www.vagrantup.com/)
+
+[Vagrant Boxes](http://www.vagrantbox.es/) Esse site é muito bom! Tem várias boxes pré-definidas com tudo instalado e configurado 
+para várias stacks como LAMP, Rails e por aí vai...
+
+
