@@ -20,4 +20,6 @@ A instalação dele é muito facil, não vou entrar nesses detalhes aqui, até p
 [Vagrant Boxes](http://www.vagrantbox.es/) Esse site é muito bom! Tem várias boxes pré-definidas com tudo instalado e configurado 
 para várias stacks como LAMP, Rails e por aí vai...
 
+O que é o Docker (e porque ele é diferente em alguns pontos do Vagrant):
 
+O conceito por trás do Docker é 
