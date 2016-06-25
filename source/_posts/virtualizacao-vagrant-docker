@@ -9,12 +9,11 @@ Você chega numa empresa nova, onde você trabalhará com a stack LAMP... Você 
 tempinho configurando eles... Além de ter que instalar alguns pacotes específicos do projeto que irá trabalhar...
 
 Imagine agora te passarem um arquivo que ao executar, cria todo o ambiente necessário para rodar a aplicação, com todos os
-serviços instalados, configurados, bastando você fazer apenas algumas configurações de preferência e pronto! Ah! E melhor, completamente 
-isolado da sua máquina (seja ela, Linux, Mac ou Windows), sem você precisar "sujar" sua máquina.
+serviços instalados, configurados, bastando você fazer apenas algumas configurações de preferência e pronto!
 
 Essa é a proposta do Vagrant. 
 
-A instalação dele é muito facil, não vou entrar nesses detalhes aqui, até porque no site tem uma documentação muito completa e boa.
+A instalação dele é muito facil, não vou entrar nesses detalhes aqui, até porque no site tem uma documentação muito completa.
 [Vagrant](https://www.vagrantup.com/)
 
 [Vagrant Boxes](http://www.vagrantbox.es/) Esse site é muito bom! Tem várias boxes pré-definidas com tudo instalado e configurado 
@@ -22,4 +21,5 @@ para várias stacks como LAMP, Rails e por aí vai...
 
 O que é o Docker (e porque ele é diferente em alguns pontos do Vagrant):
 
-O conceito por trás do Docker é 
+O conceito por trás do Docker é isolamento. 
+
