@@ -63,3 +63,10 @@ https://gist.github.com/raphaklaus/b469f03088b89fde1ba29b90de675179
 
 Um callback do tipo assíncrono tem a ver com eventos que completam-se em um período de tempo *desconhecido* 
 (leitura e escrita de arquivo, requisições de todos os tipos e processamento dinâmico).
+
+Todo...
+
+
+### Filtered Catching
+
+### Nativo vs Bibliotecas
