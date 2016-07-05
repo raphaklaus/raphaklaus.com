@@ -87,3 +87,7 @@ Para melhorar essa abordagem usa-se [Promises](https://promisesaplus.com/)
 ### Filtered Catching
 
 ### Nativo vs Bibliotecas
+
+### ES7 async/await:
+
+https://tonicdev.com/raphaklaus/async-await
