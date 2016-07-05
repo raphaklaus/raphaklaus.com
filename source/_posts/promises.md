@@ -62,10 +62,27 @@ https://gist.github.com/raphaklaus/b469f03088b89fde1ba29b90de675179
 ### Assíncrono
 
 Um callback do tipo assíncrono tem a ver com eventos que completam-se em um período de tempo *desconhecido* 
-(leitura e escrita de arquivo, requisições de todos os tipos e processamento dinâmico).
+(leitura e escrita de arquivo, requisições de todos os tipos e processamento dinâmico). Por isso se passa um callback, que será uma função executada quando a tarefa for finalizada, com sucesso ou erro.
 
-Todo...
+```
 
+getAccess(function() {
+  getUsers(function() {
+    createProduct({name: 'Mesa'}, function() {
+      deleteTemporaryUser(function() {
+        console.log('Finalmente terminou!');
+      });
+    });
+  });
+});
+
+```
+
+https://gist.github.com/raphaklaus/3d97c09c513db61a2ad02e0354e3c373
+
+Esse tipo de abordagem é chamada de *Pyramid of Hell*, ou mais especificamente *Callback Hell*, que é o contínuo aninhamento de funções. Isso é considerado uma má prática que deixa o código com baixa manutenibilidade.
+
+Para melhorar essa abordagem usa-se [Promises](https://promisesaplus.com/)
 
 ### Filtered Catching
 
