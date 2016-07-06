@@ -1,0 +1,15 @@
+Olá! Nesse artigo falarei um pouco sobre o Redis e como o padrão de mensageria Publish Subscribe pode facilitar a vida do seu projeto!
+
+O Redis não é exatamente um banco de dados do jeito que pensamos. Ele está mais para um armazenador de dados par-valor. Exemplo:
+
+`SET meu_nome Raphael`
+
+Esse comando grava dentro do Redis `Raphael` na variável `meu_nome`. O Redis também suporta alguns outros tipos de dados como grupos 
+(sets), hashs e outros. 
+
+## Qual problema o Redis não resolve bem
+
+* Ser o banco de dados de uma aplicação.
+* Manter integridade dos dados.
+
+## Qual problema o Redis resolve *muito* bem
