@@ -82,7 +82,45 @@ https://gist.github.com/raphaklaus/3d97c09c513db61a2ad02e0354e3c373
 
 Esse tipo de abordagem é chamada de *Pyramid of Hell*, ou mais especificamente *Callback Hell*, que é o contínuo aninhamento de funções. Isso é considerado uma má prática que deixa o código com baixa manutenibilidade.
 
-Para melhorar essa abordagem usa-se [Promises](https://promisesaplus.com/)
+Para melhorar essa abordagem usa-se [Promises](https://promisesaplus.com/), que nada mais é do que o retorno de um valor futuro.
+
+Em uma requisição HTTP por exemplo, não se sabe quando o retorno acontecerá. Então, para não bloquear o fluxo da aplicação, a Promise adia a execução da função `.then()` que é quando a Promise é *resolvida*.
+
+```
+function numeroPar(numero) {
+  return new Promise(function(resolve, reject)  {
+    setTimeout(function() {
+      if (numero % 2 === 0)
+        resolve();
+      else
+        reject(new Error('Não é um número par');
+    }, 2000);
+  });
+}
+```
+
+https://gist.github.com/raphaklaus/c2ed229685380358e1cc9f5fb795b1c2
+
+Imagina que essa função `numeroPar` é chamada quando alguém realiza um *GET* num servidor hipotético.
+
+Se o número passado por parametro for par, causará a Promise *resolução*, caso contrário, retornará um erro, que cairá no `catch`:
+
+
+```
+// localhost/numeroPar&numero=2
+function getNumeroPar(res, req, next) {
+  numerpPar(req.params.numero).then(function(){
+    res.send('É par!');
+  })
+  .catch(function(){
+    res.send('É ímpar!');
+  });
+}
+
+```
+
+https://gist.github.com/raphaklaus/3a01be39616f67dfbd91f3e84c8af409
+
 
 ### Filtered Catching
 
