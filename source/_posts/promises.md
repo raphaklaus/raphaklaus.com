@@ -124,6 +124,8 @@ https://gist.github.com/raphaklaus/3a01be39616f67dfbd91f3e84c8af409
 
 ### Filtered Catching
 
+Existe um recurso muito interessante que permite tratar os erros das promises
+
 ### Nativo vs Bibliotecas
 
 ### ES7 async/await:
