@@ -128,6 +128,14 @@ Existe um recurso muito interessante que permite tratar os erros das promises
 
 ### Nativo vs Bibliotecas
 
+### Performance
+
+
+
+### Debugando promises
+
+
+
 ### ES7 async/await:
 
 https://tonicdev.com/raphaklaus/async-await
