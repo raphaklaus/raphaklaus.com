@@ -134,7 +134,7 @@ Existe um recurso muito interessante que permite tratar os erros das promises
 
 ### Debugando promises
 
-
+Eu criei um utilitário bem interessante que pode ajudar a saber se existe alguma promise pendente: 
 
 ### ES7 async/await:
 
