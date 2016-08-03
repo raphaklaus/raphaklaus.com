@@ -86,6 +86,17 @@ Para melhorar essa abordagem usa-se [Promises](https://promisesaplus.com/), que 
 
 Em uma requisição HTTP por exemplo, não se sabe quando o retorno acontecerá. Então, para não bloquear o fluxo da aplicação, a Promise adia a execução da função `.then()` que é quando a Promise é *resolvida*.
 
+Criar uma Promise é muito facil, basta envolver o código que deseja adiar a execução com o bloco: 
+
+```
+return new Promise(function(resolve, reject) {
+  // Use a função resolve() quando quiser dizer que a Promise foi resolvida, ou reject() quando quiser explicitar
+  // um erro no fluxo
+});
+```
+
+Um exemplo na prática:
+
 ```
 function numeroPar(numero) {
   return new Promise(function(resolve, reject)  {
@@ -101,7 +112,7 @@ function numeroPar(numero) {
 
 https://gist.github.com/raphaklaus/c2ed229685380358e1cc9f5fb795b1c2
 
-Imagina que essa função `numeroPar` é chamada quando alguém realiza um *GET* num servidor hipotético.
+Imagine que essa função `numeroPar` é chamada quando alguém realiza um *GET* num servidor hipotético (por isso uso timeOut para simular uma demora na resposta).
 
 Se o número passado por parametro for par, causará a Promise *resolução*, caso contrário, retornará um erro, que cairá no `catch`:
 
@@ -130,7 +141,9 @@ Existe um recurso muito interessante que permite tratar os erros das promises
 
 ### Performance
 
+Promises se mal gerenciadas podem causar um gargalo absurdo na aplicação já que são mais custosas para processar do que callbacks puros. É bom ter cuidado com o número de promises pendentes no sistema.
 
+Uma forma facil de detectar esse tipo de problema em sua aplicação é observar o status de todas as promises, se foram resolvidas e quais estão pendentes por mais tempo através das propriedades `fullfill` --------------------TODO-----------------------
 
 ### Debugando promises
 
