@@ -143,7 +143,7 @@ Existe um recurso muito interessante que permite tratar os erros das promises
 
 Promises se mal gerenciadas podem causar um gargalo absurdo na aplicação já que são mais custosas para processar do que callbacks puros. É bom ter cuidado com o número de promises pendentes no sistema.
 
-Uma forma facil de detectar esse tipo de problema em sua aplicação é observar o status de todas as promises, se foram resolvidas e quais estão pendentes por mais tempo através das propriedades `fullfill` --------------------TODO-----------------------
+Uma forma facil de detectar esse tipo de problema em sua aplicação é observar o status de todas as promises, quais estão pendentes por mais tempo através da propriedade `isPending()` caso esteja usando o Bluebird.
 
 ### Debugando promises
 
