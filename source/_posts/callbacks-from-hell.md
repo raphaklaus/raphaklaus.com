@@ -3,14 +3,14 @@ title: "Callbacks From Hell"
 article: true
 date: 2016-08-21
 tags: callback, nodejs, promises, hell, javascript
-cover: artigos/promises/cowboy.jpg
+cover: artigos/callbacks-from-hell/cowboy.jpg
 ---
 
-Olá, pessoal! Nesse artigo vou falar sobre o famoso Callback Hell e como sair dele via Promises.
+Olá, pessoal! Nesse artigo vou falar sobre o famoso Callback Hell e como sair dele via Promises usando as melhores técnicas.
 
 <!-- more -->
 
-![Cowboys cavalgando num deserto texano](/artigos/promises/cowboy.jpg)
+![Cowboys cavalgando num deserto texano](/artigos/callbacks-from-hell/cowboy.jpg)
 
 ## Antes, uma introdução a callbacks
 
