@@ -31,5 +31,3 @@ Tecnologias: **Ruby on Rails, AngularJS, Ionic Framework**
 ![](matrix.png)
 Efeito Matrix no navegador.
 Tecnologia: **CSS3**
-
-
