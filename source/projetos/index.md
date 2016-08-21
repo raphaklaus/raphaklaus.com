@@ -6,6 +6,7 @@ photos:
 ---
 
 ## [fontwr](https://github.com/raphaklaus/fontwr) <br/>
+![](fontwr.gif)
 Gerenciador de fontes (woff2, woff, eot e ttf). Permite baixar mais de 800 fontes, converte-las para qualquer formato e gerar font-faces.
 Tecnologia: **NodeJS**
 
