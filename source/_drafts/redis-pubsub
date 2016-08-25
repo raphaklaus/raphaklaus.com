@@ -14,4 +14,4 @@ Esse comando grava dentro do Redis `Raphael` na variável `meu_nome`. O Redis ta
 
 ## Qual problema o Redis resolve *muito* bem
 
-Informações que servem a aplicação como um cache, estruturas de armazenamentos temporarias...
+Informações que servem a aplicação como um cache, estruturas de armazenamentos temporarias e para um JOGO! =D
