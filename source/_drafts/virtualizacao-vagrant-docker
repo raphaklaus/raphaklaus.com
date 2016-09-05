@@ -21,6 +21,6 @@ para várias stacks como LAMP, Rails e por aí vai...
 
 O que é o Docker (e porque ele é diferente em alguns pontos do Vagrant):
 
-O conceito por trás do Docker é isolamento. 
+O conceito por trás do Docker é isolamento e rápida configuração de ambiente. 
 
 O Docker é aconselhavel tanto para desenvolvimento como para produção (diferentemente do Vagrant que a proposta é só desenvolvimento)
