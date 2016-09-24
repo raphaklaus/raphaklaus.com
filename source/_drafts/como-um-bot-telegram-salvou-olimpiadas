@@ -26,7 +26,33 @@ você era inserido no grupo de Telegram só com os médicos a serviço do COB.
 * Consulta de resultados de medalhas. Nessa função era consultada a base oficial do COB permitindo escolher qual modalidade e dia.
 (GIF)
 * Consulta da programação por modalidade e dia.
-* Autenticação. Ou seja, se você não fosse do COB, não conseguiria usar o bot ;)
+(GIF)
+
+## Desafios enfrentados
+
+### Limitações do Telegram
+
+Assim como qualquer API, com o Telegram não seria diferente. 
+
+Nós precisávamos criar os grupos para conectar as pessoas toda hora que fosse solicitado, porém, em nosso ambiente de testes 
+começamos a tomar um erro chamado `FLOOD_AWAIT` que é um clássico e já era de se esperar. 
+
+Se esse erro desse em produção, toda a operação do COB seria arruinada.
+
+A solução foi criarmos um pool de grupos, e conforme o servidor recebesse o comando de "Criar grupo" ele ia nesse pool e pegava o grupo 
+já criado previamente e adicionava as pessoas dentro dele.
+
+### Quantidade mínima em grupo e integração com chat externo
+
+Um grupo só pode ser criado com no mínimo 3 usuários sendo que bot também é considerado um usuário.
+
+Considerando isso, precisaria ter um usuário Inviter que seria responsável por convidar os participantes para o
+grupo (esse usuário precisa ter todos os operadores na sua lista de contato, caso contrário não funciona), um bot para pegar 
+as mensagens e mandar para um sistema de mensageria externo e um usuário responsável pela moderação do grupo. 
+
+## Features interessantes
+
+* Autenticação. Se você não fosse do COB, não conseguiria usar o bot.
 * Autorização. Como o bot era integrado com um sistema externo, apenas usuários desse sistema poderiam acessa-lo, e nem sempre esse
 usuário poderia ter acesso a certos grupos. Então nós trabalhamos também a questão de permissão.
 * Integração do que era falado nos grupos com um sistema de mensageria externa ao Telegram. Isso foi bem interessante 
@@ -35,8 +61,4 @@ processe todas as mensagens enviadas.
 * Broadcast de mensagens para todas pessoas usando o bot. Ex.: Entrou medalha nova do Brasil, era notificada à todas os operadores que
 a medalha entrou, para então ser tomadas as medidas certas como divulgar para a impressa, etc.
 
-
-## Desafios enfrentados
-
-- BD dos jogos anteriores
-- Limites do Telegram
+[Link da matéria do SporTV onde o bot aparece](http://sportv.globo.com/videos/sportv-news/t/ultimos/v/tecnologia-auxilia-nos-treinos-do-time-brasil/5111617/)
