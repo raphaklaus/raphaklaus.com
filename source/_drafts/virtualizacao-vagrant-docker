@@ -24,3 +24,11 @@ O que é o Docker (e porque ele é diferente em alguns pontos do Vagrant):
 O conceito por trás do Docker é isolamento e rápida configuração de ambiente. 
 
 O Docker é aconselhavel tanto para desenvolvimento como para produção (diferentemente do Vagrant que a proposta é só desenvolvimento)
+
+
+
+
+## Warning
+
+Como Vagrant simula toda uma arquitetura, ele consome muita memória, é interessante saber gerenciar as memórias entre visitante e 
+hospedeiro.
