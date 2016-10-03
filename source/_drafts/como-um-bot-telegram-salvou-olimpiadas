@@ -58,7 +58,7 @@ usuário poderia ter acesso a certos grupos. Então nós trabalhamos também a q
 * Integração do que era falado nos grupos com um sistema de mensageria externa ao Telegram. Isso foi bem interessante 
 pois só foi possível graças a uma configuração que tem nos bots que se chama `/setprivacy` onde você pode permitir que o bot
 processe todas as mensagens enviadas.
-* Broadcast de mensagens para todas pessoas usando o bot. Ex.: Entrou medalha nova do Brasil, era notificada à todas os operadores que
-a medalha entrou, para então ser tomadas as medidas certas como divulgar para a impressa, etc.
+* Broadcast de mensagens para todas pessoas usando o bot. Ex.: Entrou medalha nova do Brasil, era notificada à todos os operadores que
+a medalha entrou, para então ser tomadas as medidas certas como divulgar para a imprensa, etc.
 
 [Link da matéria do SporTV onde o bot aparece](http://sportv.globo.com/videos/sportv-news/t/ultimos/v/tecnologia-auxilia-nos-treinos-do-time-brasil/5111617/)
