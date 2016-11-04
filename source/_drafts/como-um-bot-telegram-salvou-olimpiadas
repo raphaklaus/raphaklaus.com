@@ -44,7 +44,7 @@ já criado previamente e adicionava as pessoas dentro dele.
 
 ### Quantidade mínima em grupo e integração com chat externo
 
-Um grupo só pode ser criado com no mínimo 3 usuários sendo que bot também é considerado um usuário.
+Um grupo só pode ser criado com no mínimo 3 usuários sendo que bot também conta como um usuário.
 
 Considerando isso, precisaria ter um usuário Inviter que seria responsável por convidar os participantes para o
 grupo (esse usuário precisa ter todos os operadores na sua lista de contato, caso contrário não funciona), um bot para pegar 
