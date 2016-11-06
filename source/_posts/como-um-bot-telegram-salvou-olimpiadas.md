@@ -12,7 +12,7 @@ Na postagem de hoje vou falar sobre a importância que um Bot de Telegram teve p
 
 ![Um celular com o Telegram aberto mostrando o Bot que rodou nas Olimpíadas](/artigos/como-um-bot-telegram-salvou-olimpiadas/sportv.png)
 
-Era Maio de 2016 e [nós](lab21k.com.br) recebemos um requisito do Comitê Olímpico Brasileiro (COB) para criação de um sistema automatizado
+Era Maio de 2016 e [nós](http://lab21k.com.br) recebemos um requisito do Comitê Olímpico Brasileiro (COB) para criação de um sistema automatizado
 de distribuição de informações usando dados dos Centro de Operações do Rio (COR) e do Centro Integrado de Comando e Controle
 (CICC) para as Olimpíadas Rio 2016 com as API's Telegram Messenger e Telegram Bot.
 
@@ -50,25 +50,25 @@ Se esse erro desse em produção, toda a operação do COB seria arruinada.
 A solução foi criarmos um pool de grupos, e conforme o servidor recebesse o comando de "Criar grupo" ele ia nesse pool e pegava o grupo
 já criado previamente e adicionava as pessoas dentro dele.
 
-Havia também um mecanismo de envio de mensagens para todos os envolvidos via Bot. Os Ids dos usuários do Telegram ficavam guardados em outra aplicação. Portanto, usamos a técnica de Pub/Sub tendo o Redis como middleware para comunicar processos diferentes.
+Havia também um broadcast de mensagens para todos os envolvidos via Bot. Os Ids dos usuários do Telegram ficavam guardados em outra aplicação. Portanto, usamos a técnica de Pub/Sub tendo o Redis como middleware para comunicar processos diferentes. Na prática, isso era útil para ser tomadas as medidas certas como divulgar para a imprensa quando uma medalha havia entrado, por exemplo.
 
-### Quantidade mínima em grupo e integração com chat externo
+## Quantidade mínima em grupo, integração com chat externo e proteções
 
-Um grupo só pode ser criado com no mínimo 3 usuários sendo que bot também conta como um usuário.
-
-Considerando isso, precisaria ter um usuário Inviter que seria responsável por convidar os participantes para o
-grupo (esse usuário precisa ter todos os operadores na sua lista de contato, caso contrário não funciona), um bot para pegar
+Um grupo dentro do pool tinha de ser criado obrigatoriamente com no mínimo 3 usuários. Um usuário Inviter que seria responsável por convidar os participantes para o grupo (esse usuário precisa ter todos os operadores na sua lista de contato, caso contrário não funciona), um bot para pegar
 as mensagens e mandar para um sistema de mensageria externo e um usuário responsável pela moderação do grupo.
 
-## Features interessantes
+A Integração do que era falado nos grupos com o sistema de mensageria externa ao Telegram só foi possível graças a uma configuração que tem nos bots que se chama `/setprivacy` onde você pode permitir que o bot processe todas as mensagens enviadas.
 
-* Autenticação. Se você não fosse do COB, não conseguiria usar o bot.
-* Autorização. Como o bot era integrado com um sistema externo, apenas usuários desse sistema poderiam acessa-lo, e nem sempre esse
-usuário poderia ter acesso a certos grupos. Então nós trabalhamos também a questão de permissão.
-* Integração do que era falado nos grupos com um sistema de mensageria externa ao Telegram. Isso foi bem interessante
-pois só foi possível graças a uma configuração que tem nos bots que se chama `/setprivacy` onde você pode permitir que o bot
-processe todas as mensagens enviadas.
-* Broadcast de mensagens para todas pessoas usando o bot. Ex.: Entrou medalha nova do Brasil, era notificada à todos os operadores que
-a medalha entrou, para então ser tomadas as medidas certas como divulgar para a imprensa, etc.
+A autenticação/autorização foi feita toda via backend, onde só liberavamos acesso aos comandos do telegram (`/programacao`, `/resultado`, etc) após verificação do número de celular no banco de dados do sistema externo administrativo. Caso recusado, os **callbacks não eram registrados** para o usuário.
 
 ## Algumas estatísticas
+
+* Número total de usuário que usaram o sistema e o Bot para coordenar seus trabalhos diariamente: **268**
+
+* Grupos criados usando a interface do Bot: **89**
+
+* Total de mensagens trocadas nos grupos: **23985**
+
+## Considerações finais
+
+O uso de Bots soluciona um tipo de problema: Aquele que você precisa processar input e responder para o usuário a informação que ele espera, sem perder tempo fazendo grandes firulas de UI.
