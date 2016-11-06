@@ -1,0 +1,74 @@
+---
+title: "Como um Bot de Telegram salvou as Olimpíadas Rio 2016"
+article: true
+date: 2016-11-05
+tags: rio2016, rio, telegram, nodejs, javascript, bot, 2016, olimpiadas, olympics, sportv
+cover: artigos/como-um-bot-telegram-salvou-olimpiadas/sportv.png
+---
+
+Na postagem de hoje vou falar sobre a importância que um Bot de Telegram teve para as Olimpíadas Rio 2016 e os bastidores de seu desenvolvimento.
+
+<!--more -->
+
+![Um celular com o Telegram aberto mostrando o Bot que rodou nas Olimpíadas](/artigos/como-um-bot-telegram-salvou-olimpiadas/sportv.png)
+
+Era Maio de 2016 e [nós](lab21k.com.br) recebemos um requisito do Comitê Olímpico Brasileiro (COB) para criação de um sistema automatizado
+de distribuição de informações usando dados dos Centro de Operações do Rio (COR) e do Centro Integrado de Comando e Controle
+(CICC) para as Olimpíadas Rio 2016 com as API's Telegram Messenger e Telegram Bot.
+
+Bom, eu nunca tinha mexido com APIs do Telegram. Muito menos com bots. Mas o resultado foi isso aqui: [Link da matéria do SporTV onde o bot aparece](http://sportv.globo.com/videos/sportv-news/t/ultimos/v/tecnologia-auxilia-nos-treinos-do-time-brasil/5111617/)
+
+Usamos [essa](https://github.com/Lab21k/node-telegram-bot-api) biblioteca em NodeJS, que é um fork com algumas melhorias que fiz
+para trabalhar com múltiplos usuários. Esse cara serve para fazer a comunicação com o bot.
+
+Internamente criamos uma biblioteca com métodos promisificados, encapsulamentos, ES6 compatibility, que facilitou trabalhar com bots.
+Posteriormente iremos publicar no GitHub.
+
+## Como era
+
+A equipe do COB precisava ter uma plataforma para consultar informações relevantes sobre sua operação, facilitar sua equipe a se
+conectar rapidamente com grupos específicos de pessoas (criando pequenas e rápidas reuniões a fim de acertar decisões), enviar
+avisos globais para todos inscritos, consulta de incidentes abertos enviando coordenadas geográficas, entre outras coisas.
+
+* Permitir pessoas criarem grupos com grupos de pessoas específicas. Ex.: Quero falar com a área médica. Bastava clicar nessa opção e
+você era inserido no grupo de Telegram só com os médicos a serviço do COB.
+(GIF)
+* Consulta de resultados de medalhas. Nessa função era consultada a base oficial do COB permitindo escolher qual modalidade e dia.
+(GIF)
+* Consulta da programação por modalidade e dia.
+(GIF)
+
+## Limitações do Telegram e Desafios enfrentados
+
+Assim como qualquer API, com o Telegram não seria diferente.
+
+Nós precisávamos criar os grupos para conectar as pessoas toda hora que fosse solicitado, porém, em nosso ambiente de testes
+começamos a tomar um erro chamado `FLOOD_AWAIT` que é um clássico e já era de se esperar.
+
+Se esse erro desse em produção, toda a operação do COB seria arruinada.
+
+A solução foi criarmos um pool de grupos, e conforme o servidor recebesse o comando de "Criar grupo" ele ia nesse pool e pegava o grupo
+já criado previamente e adicionava as pessoas dentro dele.
+
+Havia também um mecanismo de envio de mensagens para todos os envolvidos via Bot. Os Ids dos usuários do Telegram ficavam guardados em outra aplicação. Portanto, usamos a técnica de Pub/Sub tendo o Redis como middleware para comunicar processos diferentes.
+
+### Quantidade mínima em grupo e integração com chat externo
+
+Um grupo só pode ser criado com no mínimo 3 usuários sendo que bot também conta como um usuário.
+
+Considerando isso, precisaria ter um usuário Inviter que seria responsável por convidar os participantes para o
+grupo (esse usuário precisa ter todos os operadores na sua lista de contato, caso contrário não funciona), um bot para pegar
+as mensagens e mandar para um sistema de mensageria externo e um usuário responsável pela moderação do grupo.
+
+## Features interessantes
+
+* Autenticação. Se você não fosse do COB, não conseguiria usar o bot.
+* Autorização. Como o bot era integrado com um sistema externo, apenas usuários desse sistema poderiam acessa-lo, e nem sempre esse
+usuário poderia ter acesso a certos grupos. Então nós trabalhamos também a questão de permissão.
+* Integração do que era falado nos grupos com um sistema de mensageria externa ao Telegram. Isso foi bem interessante
+pois só foi possível graças a uma configuração que tem nos bots que se chama `/setprivacy` onde você pode permitir que o bot
+processe todas as mensagens enviadas.
+* Broadcast de mensagens para todas pessoas usando o bot. Ex.: Entrou medalha nova do Brasil, era notificada à todos os operadores que
+a medalha entrou, para então ser tomadas as medidas certas como divulgar para a imprensa, etc.
+
+## Algumas estatísticas
