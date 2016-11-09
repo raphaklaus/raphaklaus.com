@@ -71,6 +71,6 @@ Configurações da máquina de produção: 4 cpus e 8gb de RAM.
 
 ## Considerações finais
 
-O projeto foi um sucesso.
-
 A velocidade desse projeto (feito praticamente às vésperas dos jogos) é fruto do fato dos Bots solucionarem um tipo específico de problema: Aquele que você precisa processar input e responder para o usuário a informação que ele espera, sem perder tempo e dinheiro projetando UI.
+
+O projeto foi um sucesso. Conseguimos impactar positivamente o andamento das olimpíadas e aprendemos muito durante o processo. :)
