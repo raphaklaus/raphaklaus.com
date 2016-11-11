@@ -25,10 +25,13 @@ O conceito por trás do Docker é isolamento e rápida configuração de ambient
 
 O Docker é aconselhavel tanto para desenvolvimento como para produção (diferentemente do Vagrant que a proposta é só desenvolvimento)
 
-
-
-
 ## Warning
 
 Como Vagrant simula toda uma arquitetura, ele consome muita memória, é interessante saber gerenciar as memórias entre visitante e 
 hospedeiro.
+
+Docker Compose é um ferramenta que permite gerenciar multiplos containers através de um arquivo de configuração simples. A partir dele é 
+possível startar todo ambiente necessário.
+
+Existe uma GUI chamada Kitematic que suporta Mac e Windows e é simplesmente **linda**. Facilita demais o dia-a-dia de quem trabalha com 
+Docker.
