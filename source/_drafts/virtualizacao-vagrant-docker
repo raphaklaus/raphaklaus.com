@@ -1,12 +1,15 @@
+**disclaimer**: antes de mais nada, Vagrant e Docker servem para coisas diferentes!
+
 O que é o Vagrant:
 
-O Vagrant te permite criar ambientes de desenvolvimento portáveis, leves e replicáveis. Por meio de Virtual Machines (VMs), 
-é possível obter um ambiente de desenvolvimento com tudo já configurado em poucos minutos. Completamente pronto para desenvolvimento. 
+O Vagrant é um software que permite criar ambientes de desenvolvimento leves e replicáveis. Por meio de Virtual Machines (VMs), 
+é possível obter um ambiente de desenvolvimento com tudo já configurado em poucos minutos.
 
 Vamos supor a seguinte situação:
 
 Você chega numa empresa nova, onde você trabalhará com a stack LAMP... Você terá de instalar o Apache, MySQL, PHP e depois perder um
-tempinho configurando eles... Além de ter que instalar alguns pacotes específicos do projeto que irá trabalhar...
+tempinho configurando eles... Além de ter que instalar alguns pacotes específicos do projeto em questão... Se por algum motivo 
+você sujar a configuração, já era, vai ter que instalar tudo do zero.
 
 Imagine agora te passarem um arquivo que ao executar, cria todo o ambiente necessário para rodar a aplicação, com todos os
 serviços instalados, configurados, bastando você fazer apenas algumas configurações de preferência e pronto!
@@ -21,17 +24,19 @@ para várias stacks como LAMP, Rails e por aí vai...
 
 O que é o Docker (e porque ele é diferente em alguns pontos do Vagrant):
 
-O conceito por trás do Docker é isolamento e rápida configuração de ambiente. 
+O conceito por trás do Docker é isolamento e existência e efêmera. Cada serviço utilizado em uma aplicação é rodado
+completamente isolado do resto do sistema. Em cada nova inicialização, toda o default de fábrica do serviço volta. Só fica
+arquivos de configuração especificados e portas de comunicação.
 
-O Docker é aconselhavel tanto para desenvolvimento como para produção (diferentemente do Vagrant que a proposta é só desenvolvimento)
+O Docker é aconselhavel tanto para desenvolvimento como para produção (diferentemente do Vagrant que a proposta é apenas desenvolvimento)
 
 ## Warning
 
 Como Vagrant simula toda uma arquitetura, ele consome muita memória, é interessante saber gerenciar as memórias entre visitante e 
 hospedeiro.
 
-Docker Compose é um ferramenta que permite gerenciar multiplos containers através de um arquivo de configuração simples. A partir dele é 
+Docker Compose é um ferramenta que gerencia multiplos containers através de um arquivo de configuração simples. A partir dele é 
 possível startar todo ambiente necessário.
 
-Existe uma GUI chamada Kitematic que suporta Mac e Windows e é simplesmente **linda**. Facilita demais o dia-a-dia de quem trabalha com 
-Docker.
+Existe uma GUI chamada [Kitematic](https://kitematic.com/) que suporta Mac e Windows e é simplesmente **linda**. Facilita demais 
+o dia-a-dia de quem trabalha com Docker.
