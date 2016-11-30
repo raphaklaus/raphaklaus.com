@@ -74,3 +74,13 @@ Configurações da máquina de produção: 4 cpus e 8gb de RAM.
 A velocidade desse projeto (feito praticamente às vésperas dos jogos) é fruto do fato dos Bots solucionarem um tipo específico de problema: Aquele que você precisa processar input e responder para o usuário a informação que ele espera, sem perder tempo e dinheiro projetando UI.
 
 O projeto foi um sucesso. Conseguimos impactar positivamente o andamento das olimpíadas e aprendemos muito durante o processo. :)
+
+Quem quiser saber mais sobre bots, eu criei alguns com código aberto que estão no meu [GitHub](https://github.com/raphaklaus):
+
+[captura de news RSS e sintetização de voz via IBM Watson](https://github.com/raphaklaus/telegram-news-bot) 
+
+[Scrapper em um site de culinária. Permite chamar o bot em grupos passando um ou mais ingredientes e ele te retorna uma foto, ingredientes e passo a passo de uma receita culinária](https://github.com/raphaklaus/telegram-recipe-bot)
+
+[Bot para fazer deploy de sites via git com enfase em heroku e dokku](https://github.com/raphaklaus/telegram-deploy-bot)
+
+[simples troca de mensagem](https://github.com/raphaklaus/telegram-bot-sample)
