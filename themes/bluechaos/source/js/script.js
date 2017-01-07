@@ -1,25 +1,19 @@
 var isMenuOpened = false;
 
-function toggleMenu(){
-  if (isMenuOpened){
+function toggleMenu() {
+  if (isMenuOpened) {
     $('.menu').addClass('invisible');
     isMenuOpened = false;
-  }
-  else{
+  } else {
     $('.menu').removeClass('invisible');
     isMenuOpened = true;
   }
-
-  // todo: Some crazy animation... :)
-  // $('.menu').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e){
-  //   if (e.animationName === 'closeAnimation')
-  //     $(this).addClass('invisible');
-  // });  
 }
 
-Zepto(function($){
-  console.log('foi?')
-  if ($(window).width() > 720){
+Zepto(function($) {
+  if ($(window).width() > 720) {
     $('nav > video').append('<source src="/media/cssbackground.mp4" type="video/mp4">');
   }
 });
+
+console.log('Olá! Espero que aprenda um pouco por aqui também :)');
