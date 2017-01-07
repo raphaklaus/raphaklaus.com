@@ -1,7 +1,7 @@
 ---
 title: "Como um Bot de Telegram salvou as Olimpíadas Rio 2016"
 article: true
-date: 2016-11-05
+date: 2017-01-07
 tags: rio2016, rio, telegram, nodejs, javascript, bot, 2016, olimpiadas, olympics, sportv
 cover: artigos/como-um-bot-telegram-salvou-olimpiadas/sportv.png
 ---
@@ -22,20 +22,25 @@ Internamente criamos uma biblioteca com métodos promisificados, encapsulamentos
 
 ## Como era
 
-A equipe do COB precisava ter uma plataforma para consultar informações relevantes sobre sua operação, facilitar sua equipe a se
-conectar rapidamente com grupos específicos de pessoas (criando pequenas e rápidas reuniões a fim de acertar decisões), enviar
-avisos globais para todos inscritos, consulta de incidentes abertos enviando coordenadas geográficas, entre outras coisas.
+A equipe do COB precisava ter uma plataforma para consultar informações relevantes sobre sua operação, facilitar sua equipe a obter informação rapidamente.
 
-* Permitir pessoas criarem grupos com grupos de pessoas específicas. Ex.: Quero falar com a área médica. Bastava clicar nessa opção e você era inserido no grupo de Telegram só com os médicos a serviço do COB.
-(GIF)
+* Permitir pessoas criarem grupos com sub-grupos de pessoas específicas. Ex.: Quero falar com a área médica. Bastava clicar nessa opção e você era inserido no grupo de Telegram só com os médicos a serviço do COB.
+
 * Consulta de resultados de medalhas. Nessa função era consultada a base oficial do COB permitindo escolher qual modalidade e dia.
-(GIF)
+
 * Consulta da programação por modalidade e dia.
-(GIF)
+
+* Avisos globais para todos inscritos num sistema de pub/sub.
+
+* Consulta de incidentes abertos enviando coordenadas geográficas.
+
+<img src="/artigos/como-um-bot-telegram-salvou-olimpiadas/resultado.jpg" style="width: 420px" alt="Um screenshot do bot consultado os resultados dos jogos">
+
+<img src="/artigos/como-um-bot-telegram-salvou-olimpiadas/programacao.jpg" style="width: 420px" alt="Um screenshot do bot consultando a programação dos jogos">
 
 ## Algumas estatísticas
 
-* Número total de usuário que usaram o sistema e o Bot para coordenar seus trabalhos diariamente: **268**
+* Número total de usuário que usaram o sistema e o Bot para coordenar seus trabalhos diariamente na Rio 2016: **268**
 
 * Grupos criados usando a interface do Bot: **89**
 
@@ -71,17 +76,16 @@ Configurações da máquina de produção: 4 cpus e 8gb de RAM.
 
 ## Considerações finais
 
-A velocidade desse projeto (feito praticamente às vésperas dos jogos) é fruto do fato dos Bots solucionarem um tipo específico de problema: Aquele que você precisa processar input e responder para o usuário a informação que ele espera, sem perder tempo e dinheiro projetando UI.
+A velocidade desse projeto (feito praticamente às vésperas dos jogos) é fruto dos Bots solucionarem um tipo específico de problema: Aquele que você precisa processar input e responder para o usuário a informação que ele espera, sem perder tempo e dinheiro projetando UI.
 
 O projeto foi um sucesso. Conseguimos impactar positivamente o andamento das olimpíadas e aprendemos muito durante o processo. :)
 
 Quem quiser saber mais sobre bots, eu palestrei no [Rio Dev Day 2016](https://riodevday.github.io/) sobre o assunto e criei alguns com código aberto que estão no meu [GitHub](https://github.com/raphaklaus):
 
-[Captura de news RSS e sintetização de voz via IBM Watson](https://github.com/raphaklaus/telegram-news-bot) 
+[Captura de news RSS e sintetização de voz via IBM Watson](https://github.com/raphaklaus/telegram-news-bot)
 
 [Scrapper em um site de culinária. Permite chamar o bot em grupos passando um ou mais ingredientes e ele te retorna uma foto, ingredientes e passo a passo de uma receita culinária](https://github.com/raphaklaus/telegram-recipe-bot)
 
 [Bot para fazer deploy de sites via git com enfase em heroku e dokku](https://github.com/raphaklaus/telegram-deploy-bot)
 
 [Simples troca de mensagem](https://github.com/raphaklaus/telegram-bot-sample)
-
