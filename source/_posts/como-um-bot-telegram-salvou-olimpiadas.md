@@ -3,14 +3,14 @@ title: "Como um Bot de Telegram salvou as Olimpíadas Rio 2016"
 article: true
 date: 2017-01-07
 tags: rio2016, rio, telegram, nodejs, javascript, bot, 2016, olimpiadas, olympics, sportv
-cover: artigos/como-um-bot-telegram-salvou-olimpiadas/sportv.png
+cover: artigos/como-um-bot-telegram-salvou-olimpiadas/sportv.jpg
 ---
 
 Na postagem de hoje vou falar sobre a importância que um Bot de Telegram teve para as Olimpíadas Rio 2016 e os bastidores de seu desenvolvimento.
 
 <!--more -->
 
-![Um celular com o Telegram aberto mostrando o Bot que rodou nas Olimpíadas](/artigos/como-um-bot-telegram-salvou-olimpiadas/sportv.png)
+![Um celular com o Telegram aberto mostrando o Bot que rodou nas Olimpíadas](/artigos/como-um-bot-telegram-salvou-olimpiadas/sportv.jpg)
 
 Era Maio de 2016 e [nós](http://lab21k.com.br) recebemos um requisito do Comitê Olímpico Brasileiro (COB) para criação de um sistema automatizado de distribuição de informações usando dados dos Centro de Operações do Rio (COR) e do Centro Integrado de Comando e Controle (CICC) para as Olimpíadas Rio 2016 com as API's Telegram Messenger e Telegram Bot.
 
