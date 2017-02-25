@@ -71,9 +71,9 @@ theme: bluechaos
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: rsync
-  host: 107.170.155.57
+  host: raphaklaus.com
   user: root
-  root: /root/raphaklaus.com
+  root: /root/apps/raphaklaus.com/static
   port: 22
   delete: [true]
   verbose: [true]

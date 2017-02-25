@@ -10,10 +10,4 @@ function toggleMenu() {
   }
 }
 
-Zepto(function($) {
-  if ($(window).width() > 720) {
-    $('nav > video').append('<source src="/media/cssbackground.mp4" type="video/mp4">');
-  }
-});
-
 console.log('Olá! Espero que aprenda um pouco por aqui também :)');
