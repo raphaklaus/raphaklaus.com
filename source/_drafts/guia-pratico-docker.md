@@ -13,3 +13,28 @@ cover: artigos/guia-pratico-docker/whale.jpg
 ![Uma baleia no oceano](/artigos/guia-pratico-docker/whale.jpg)
 
 ## Conceito
+
+## Awareness
+
+## Primeiros passos
+
+### Dockerfile
+
+### Docker Compose
+
+<br/>
+---Part2
+
+## Gerenciamento
+
+### Monitoramento
+
+### Deploy
+
+### Backup
+
+## Clusterização com Docker Swarm
+
+## Segurança
+
+## IPv6
