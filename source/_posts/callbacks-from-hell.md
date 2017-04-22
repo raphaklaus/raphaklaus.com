@@ -14,6 +14,8 @@ Olá, pessoal! Nesse artigo vou falar sobre o famoso Callback Hell e como sair d
 
 **Atualização (05/11/2016): A nova versão 7 do NodeJS já suporta async/await, porém apenas usando a flag `--harmony` ao rodar o programa**
 
+**Atualização (22/04/2017): A partir da versão 7.6 do NodeJS o async/await já funciona sem a flag harmony**
+
 ## Antes, uma introdução a callbacks
 
 Em desenvolvimento de software chamamos de *callback* funções que são passadas como argumento para outras funções, geralmente para serem

@@ -4,6 +4,10 @@ slug: projetos
 photos:
 - /projetos/matrix.png
 ---
+## [Game Boy CPU Emulator](https://github.com/raphaklaus/gameboy-cpu) <br/>
+Esse é um trabalho em progresso da emulação da CPU Game Boy (DMG).
+Tecnologias: **JavaScript (ES6+), functional**
+
 ## [fontwr](https://github.com/raphaklaus/fontwr) <br/>
 ![](fontwr.gif)
 Gerenciador de fontes (woff2, woff, eot e ttf). Permite baixar mais de 800 fontes, converte-las para qualquer formato e gerar font-faces.
@@ -15,7 +19,7 @@ Tecnologia: **NodeJS**
 
 ## [Browser Threshold](https://github.com/raphaklaus/browser-threshold) <br/>
 Pequena ferramenta para limitar acesso à sites vindos de browsers antigos como IE <= 10
-Tecnologia: **Javascript**
+Tecnologia: **JavaScript**
 
 ## [Frequency Message Generator](http://raphaklaus.github.io/frequency-message-generator/) <br/>
 ![](frequencygenerator.png)
