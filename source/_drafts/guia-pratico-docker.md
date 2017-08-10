@@ -20,7 +20,7 @@ Imagine um container como um separador de serviços. Cada container roda seu pr�
 
 Esses containers são baseados em imagens que são como instalações bases para containers (vamos falar disso melhor mais abaixo).
 
-A partir desse ponto, conseguimos ter um container rodando apenas um servidor Apache, outro rodando apenas uma aplicação NodeJS e por aí vai...
+A partir desse ponto, conseguimos ter um container rodando apenas um servidor Apache, outro rodando apenas uma aplicação NodeJS e por aí vai... Permitindo escala-los individualmente.
 
 Mas aí você pergunta: ** qual a real vantagem de se trabalhar dessa forma? **
 
@@ -83,6 +83,9 @@ Repare que em todos as 3 páginas tem escrito em cima "OFFICIAL REPOSITORY". Pri
 ### Deploy
 
 ### Backup
+
+<br/>
+--part3
 
 ## Clusterização com Docker Swarm
 
