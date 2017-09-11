@@ -10,7 +10,9 @@
         <h1 class="title">{{ .Title }}</h1>
         <small>Read in 
             <span>
-                <a href="{{ .RelPermalink }}">Portuguese</a>
+                {{ range .Translations }}
+                <a href="{{ .Permalink }}">{{ .Language.Title }}</a>
+                {{ end }}
             </span>
         </small>
         {{ .Content }}
