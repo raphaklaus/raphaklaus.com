@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on My New Hugo Site</title>
+    <link>http://example.org/posts/</link>
+    <description>Recent content in Posts on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Aug 2017 01:59:23 -0300</lastBuildDate>
+    
+	<atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Uma história sobre gatos</title>
+      <link>http://example.org/posts/example/</link>
+      <pubDate>Thu, 10 Aug 2017 01:59:23 -0300</pubDate>
+      
+      <guid>http://example.org/posts/example/</guid>
+      <description>Cat &amp;lt;3   Cortado responsive piverate actionable insight earned media bootstrapping parallax latte unicorn disrupt pitch deck engaging. Grok SpaceTeam grok workflow agile hacker human-centered design Steve Jobs Steve Jobs. Engaging pivot personas ship it bootstrapping affordances food-truck actionable insight. Intuitive pivot user centered design Steve Jobs cortado piverate venture capital entrepreneur.
+Agile bootstrapping minimum viable product responsive grok integrate venture capital ship it intuitive pair programming personas.</description>
+    </item>
+    
+  </channel>
+</rss>

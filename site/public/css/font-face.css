@@ -1,0 +1,15 @@
+@font-face {
+	font-family: 'Aileron';
+	src: url('Aileron-Bold.woff2') format('woff2'),
+		url('Aileron-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Clear Sans';
+	src: url('ClearSans.woff2') format('woff2'),
+		url('ClearSans.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}

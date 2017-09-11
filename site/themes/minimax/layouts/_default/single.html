@@ -1,0 +1,22 @@
+{{ partial "head.html" }}
+
+{{ define "title" }}
+{{ .Title }} – {{ .Site.Title }} {{ end }}
+<section>
+    <article class="article-container">
+        <figure>
+            <img src="{{ .Params.cover }}" alt="{{ .Title }}">
+        </figure>
+        <h1 class="title">{{ .Title }}</h1>
+        <small>Read in 
+            <span>
+                <a href="{{ .RelPermalink }}">Portuguese</a>
+            </span>
+        </small>
+        {{ .Content }}
+    </article>
+</section>
+
+
+
+{{ partial "tail.html" }}

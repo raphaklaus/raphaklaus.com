@@ -1,0 +1,124 @@
+body {
+    background-color: #F1F1F1;
+    font-size: 14px;
+}
+
+p {
+    font-family: 'Clear Sans';
+    color: #444444;
+    font-size: 1rem;
+    margin: 20px 0 20px 0;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #515151;
+    font-family: 'Aileron';
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 28px;
+    margin: 16px 0 16px 0;
+}
+
+h2 {
+    font-size: 26px;
+    margin: 14px 0 14px 0;
+}
+
+h3 {
+    font-size: 24px;
+    margin: 12px 0 12px 0;
+}
+
+h4 {
+    font-size: 22px;
+    margin: 10px 0 10px 0;
+}
+
+h5 {
+    font-size: 20px;
+    margin: 8px 0 8px 0;
+}
+
+small {
+    color: #5f5f5f;
+    font-family: 'Clear Sans';
+    font-size: .8rem;
+    margin: 0;
+}
+
+a {
+    color: #28ade2;
+}
+
+a:visited {
+    color: #186899;
+}
+
+a:hover {
+    color: #6fc5e7;
+}
+
+@media (max-width: 468px) {
+    h1 {
+        font-size: 26px;
+        margin: 12px 0 12px 0;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin: 10px 0 10px 0;
+    }
+
+    h3 {
+        font-size: 22px;
+        margin: 8px 0 8px 0;
+    }
+
+    h4 {
+        font-size: 20px;
+        margin: 6px 0 6px 0;
+    }
+
+    h5 {
+        font-size: 18px;
+        margin: 4px 0 4px 0;
+    }
+}
+
+p {
+    color: #444444;
+}
+
+figure {
+    margin: 0;
+}
+
+figure > img {
+    width: 100%
+}
+
+figure > figcaption > h4 {
+    margin: 0;
+}
+
+.title {
+    margin: 0;
+}
+
+.article-container {
+    margin: 0 120px 0 120px;
+}
+
+@media (max-width: 960px) {
+    .article-container {
+        margin: 0 60px 0 60px;
+    }
+}
+
+@media (max-width: 468px) {
+    .article-container {
+        margin: 0 20px 0 20px;
+    }
+}
