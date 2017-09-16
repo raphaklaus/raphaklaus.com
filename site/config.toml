@@ -1,10 +1,11 @@
-baseURL = "http://example.org/"
+baseURL = "http://raphaklaus.com"
 DefaultContentLanguage = "en"
 title = "raphaklaus"
 theme="minimax"
+disqusShortname = "raphaklaus"
 
 [Languages]
 [Languages.en]
-title = "English"
+languageName = "English"
 [Languages.pt-br]
-title = "Portuguese"
+languageName = "Portuguese"

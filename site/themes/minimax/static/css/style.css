@@ -6,8 +6,8 @@ body {
 p {
     font-family: 'Clear Sans';
     color: #444444;
-    font-size: 1rem;
-    margin: 20px 0 20px 0;
+    font-size: 18px;;
+    margin: 0 0 20px 0;
 }
 
 h1, h2, h3, h4, h5 {
@@ -18,27 +18,27 @@ h1, h2, h3, h4, h5 {
 
 h1 {
     font-size: 28px;
-    margin: 16px 0 16px 0;
+    margin: 54px 0 16px 0;
 }
 
 h2 {
     font-size: 26px;
-    margin: 14px 0 14px 0;
+    margin: 48px 0 12px 0;
 }
 
 h3 {
     font-size: 24px;
-    margin: 12px 0 12px 0;
+    margin: 44px 0 10px 0;
 }
 
 h4 {
     font-size: 22px;
-    margin: 10px 0 10px 0;
+    margin: 38px 0 8px 0;
 }
 
 h5 {
     font-size: 20px;
-    margin: 8px 0 8px 0;
+    margin: 34px 0 6px 0;
 }
 
 small {
@@ -53,7 +53,7 @@ a {
 }
 
 a:visited {
-    color: #186899;
+    color: #28ade2;
 }
 
 a:hover {
@@ -63,27 +63,27 @@ a:hover {
 @media (max-width: 468px) {
     h1 {
         font-size: 26px;
-        margin: 12px 0 12px 0;
+        margin: 50px 0 10px 0;
     }
 
     h2 {
         font-size: 24px;
-        margin: 10px 0 10px 0;
+        margin: 45px 0 8px 0;
     }
 
     h3 {
         font-size: 22px;
-        margin: 8px 0 8px 0;
+        margin: 40px 0 6px 0;
     }
 
     h4 {
         font-size: 20px;
-        margin: 6px 0 6px 0;
+        margin: 35px 0 4px 0;
     }
 
     h5 {
         font-size: 18px;
-        margin: 4px 0 4px 0;
+        margin: 30px 0 2px 0;
     }
 }
 
@@ -107,18 +107,150 @@ figure > figcaption > h4 {
     margin: 0;
 }
 
-.article-container {
-    margin: 0 120px 0 120px;
+.container {
+    margin: 20px 220px 20px 220px;
+}
+
+.article-container > p:first-child {
+    margin: 20px 0 20px 0;
 }
 
 @media (max-width: 960px) {
-    .article-container {
-        margin: 0 60px 0 60px;
+    .container {
+        margin: 20px 60px 20px 60px;
     }
 }
 
 @media (max-width: 468px) {
-    .article-container {
-        margin: 0 20px 0 20px;
+    .container {
+        margin: 20px;
     }
 }
+
+nav {
+    display: flex;
+    font-family: 'Clear Sans';
+    justify-content: center;
+    margin: 20px 0 20px 0;
+}
+
+nav > div > a {
+    width: 100px;
+    text-align: center;
+}
+
+nav > div {
+    display: flex;
+    width: 300px;
+}
+
+.about-container {
+    /* display: flex;
+    justify-content: center;
+    flex-direction: column; */
+}
+
+.about-container > p {
+    color: #95989A;
+}
+
+.about-name {
+    font-family: 'Aileron';
+    margin: 54px 0 0px 0;
+}
+
+.about-name-position-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-name-position-container > h2 {
+    margin: 10px 0 0 0;
+}
+
+.about-info-container {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.about-profile-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-profile-image > img {
+    border-radius: 100%;
+    width: 150px;
+}
+
+.about-info-container > p {
+    margin: 0;
+}
+
+.about-info-container > p > i {
+    color: black;
+}
+
+.about-container > small {
+    font-size: 16px;
+}
+
+.about-description-container {
+    color: #5A5A5A;
+    text-align: center;
+}
+
+.about-description-container > h2 {
+    margin: 30px 0 16px 0;
+}
+
+
+/* Posts style section */
+
+.posts-container > article {
+    margin: 0 0 50px 0;
+}
+
+.posts-container > article > .date {
+    font-size: 14px;
+}
+
+.posts-container > article > h1 {
+    margin: 0;
+}
+
+.posts-container > article > a {
+    display: block;
+}
+
+.posts-title {
+    margin: 25px 0 25px 0;
+    text-align: center;
+}
+
+.posts-cover {
+    width: 100%;
+}
+
+/* @media (max-width: 468px) {
+    .about-description-container > h2 {
+    }
+} */
+
+/* #disqus_thread{
+     position: relative;
+}
+#disqus_thread:after{
+     content: "";
+     display: block;
+     height: 55px;
+     width: 100%;
+     position: absolute;
+     bottom: 0px;
+     background:#F1F1F1;
+} */
+
+
+
+

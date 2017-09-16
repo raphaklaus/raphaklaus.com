@@ -1,0 +1,7 @@
+{{ define "title" }} {{ .Page.Title }} {{ end }}
+
+{{ partial "head.html" . }} 
+{{ partial "header.html" . }}
+{{ block "list" . }}
+{{ end }} 
+{{ partial "tail.html" . }}

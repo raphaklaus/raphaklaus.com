@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>{{ .Page.Title }} - {{ .Site.Title }}</title>
+    <!-- <title>{{ .Page.Params.mastertitle }}</title> -->
+    <!-- <title>test</title> -->
     <meta charset="UTF-8">
+    <meta name="title" content="Default">
+    <meta name="description" content="Default">
+    <meta name="type" content="Default">
+    <meta name="url" content="Default">
+    <meta name="image" content="Default">
+    <meta name="locale" content="Default">
+    <!-- Open Graph meta tags -->
+    <meta name="og:title" content="Default">
+    <meta name="og:description" content="Default">
+    <meta name="og:type" content="Default">
+    <meta name="og:url" content="Default">
+    <meta name="og:image" content="Default">
+    <meta name="og:locale" content="Default">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{ .Site.BaseURL}}/css/font-face.css" rel="stylesheet">
+    <link href="{{ .Site.BaseURL}}/css/font-awesome.css" rel="stylesheet">
     <link href="{{ .Site.BaseURL}}/css/style.css" rel="stylesheet">
 </head>
-<body>
+<body class="container">

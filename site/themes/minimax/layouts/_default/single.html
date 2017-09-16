@@ -1,22 +1,33 @@
 {{ partial "head.html" }}
 
-{{ define "title" }}
-{{ .Title }} – {{ .Site.Title }} {{ end }}
+{{ define "Page.Title" }}
+{{ .Title }} – a {{ .Site.Title }} {{ end }}
+
+{{ partial "header.html" }}
+
 <section>
-    <article class="article-container">
         <figure>
             <img src="{{ .Params.cover }}" alt="{{ .Title }}">
         </figure>
         <h1 class="title">{{ .Title }}</h1>
+        <small>
+             <!-- {{ dateFormat "Jul 2, 1989" "2017-12-12" }} -->
+             {{ dateFormat "January 1, 2006" .Date }}
+        </small>
+        <br>
+        {{ if .IsTranslated }}
         <small>Read in 
             <span>
                 {{ range .Translations }}
-                <a href="{{ .Permalink }}">{{ .Language.Title }}</a>
+                <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
                 {{ end }}
             </span>
         </small>
-        {{ .Content }}
-    </article>
+        {{ end }}
+        <article class="article-container">
+            {{ .Content }}
+        </article>
+        {{ partial "disqus.html" . }}
 </section>
 
 

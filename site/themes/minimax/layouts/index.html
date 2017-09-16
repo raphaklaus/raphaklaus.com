@@ -1,4 +1,49 @@
-{{ partial "head.html" }}
-        {{ block "list" . }}
-        {{ end }}
+{{ partial "head.html" . }}
+        {{ partial "header.html" }}
+        <section class="about-container">
+          <section class="about-profile-image">
+            <img src="/me.png" alt="Profile picture of mine">
+          </section>
+
+          <section class="about-name-position-container">
+            <h2 class="about-name">Raphael D. Pinheiro</h2>
+            <small>Software Engineer at <a href="http://lab21k.com.br" target="_blank">Lab21k</a></small>
+          </section>
+
+          <section class="about-info-container">
+            <p>
+              <i class="fa fa-globe"></i>
+              Rio de Janeiro, Brazil
+            </p>
+            <p>
+              <i class="fa fa-envelope-o"></i>
+              raphaklaus@gmail.com
+            </p>
+            <p>
+              <i class="fa fa-key"></i>
+              <a href="/raphaklaus.asc">E197 3B41 AC97 7BDB 63CE 07C8 F0E3 58DF D695 D8E1</a>
+            </p>
+          </section>
+  
+          <section class="about-description-container">
+            <h2>Hello! In 7 years of experience I've had <br> the opportunity to work in awesome things.</h2>
+
+            <h2>
+              From
+              <a href="http://www.alterdata.com.br" target="_blank">huge systems</a>
+              and <a href="" target="_blank">smart cities</a> to 
+              <br>
+              <a href="http://megalancers.com" target="_blank">marketplace</a> and 
+              <a href="http://sportv.globo.com/videos/sportv-news/t/ultimos/v/tecnologia-auxilia-nos-treinos-do-time-brasil/5111617/" target="_blank">chat bots</a>.
+            </h2>
+
+            <h2>You can find me at <a href="https://github.com/raphaklaus" target="_blank">GitHub</a>, 
+              <a href="https://www.linkedin.com/in/raphaelduartepinheiro/" target="_blank">Linkedin</a>.
+            </h2>
+          </section>
+
+        </section>
+        
+
+        <!-- {{ .Content }} -->
 {{ partial "tail.html" }}
