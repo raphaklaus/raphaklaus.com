@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta property="title" content="Callbacks From Hell">
+    <meta property="description" content="Olá, pessoal! Nesse artigo vou falar sobre o famoso Callback Hell e como sair dele via Promises usando as melhores técnicas.
+Atualização (05/11/2016): A nova versão 7 do NodeJS já suporta async/await, porém apenas usando a flag --harmony ao rodar o programa
+Atualização (22/04/2017): A partir da versão 7.6 do NodeJS o async/await já funciona sem a flag harmony
+Antes, uma introdução a callbacks Em desenvolvimento de software chamamos de callback funções que são passadas como argumento para outras funções, geralmente para serem executadas depois de algum processamento.">
+    <meta property="type" content="website">
+    <meta property="url" content="http://raphaklaus.com/posts/callbacks-from-hell/">
+    <meta property="image" content="http://raphaklaus.com/cowboys.jpg">
+    <meta property="locale" content="en_US">
+    <meta property="tags" content="callback, nodejs, promises, hell, javascript">
+    <meta property="article:published_time" content="2016-08-21 00:00:00 &#43;0000 UTC">
+    <meta property="article:modified_time" content="">
+    <meta property="article:tags" content="callback, nodejs, promises, hell, javascript">
+    
+    
+    <meta property="og:title" content="Callbacks From Hell">
+    <meta property="og:description" content="Olá, pessoal! Nesse artigo vou falar sobre o famoso Callback Hell e como sair dele via Promises usando as melhores técnicas.
+Atualização (05/11/2016): A nova versão 7 do NodeJS já suporta async/await, porém apenas usando a flag --harmony ao rodar o programa
+Atualização (22/04/2017): A partir da versão 7.6 do NodeJS o async/await já funciona sem a flag harmony
+Antes, uma introdução a callbacks Em desenvolvimento de software chamamos de callback funções que são passadas como argumento para outras funções, geralmente para serem executadas depois de algum processamento.">
+    <meta property="og:type" content="article ">
+    <meta property="og:site_name" content="raphaklaus">
+    <meta property="og:url" content="http://raphaklaus.com/posts/callbacks-from-hell/">
+    <meta property="og:image" content="http://raphaklaus.com/cowboys.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:tags" content="">
+    <meta property="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="canonical" href="http://raphaklaus.com/posts/callbacks-from-hell/">
+
+    <title>Callbacks From Hell - Raphael D. Pinheiro </title>
+    
+    <link href="/css/font-face.css" rel="stylesheet">
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body class="container">
+
+<nav>
+    <div>
+        <a href="/posts">Posts</a>
+        <a href="/projects">Projects</a>
+        <a href="/talks">Talks</a>
+        <a href="/">About me</a>
+    </div>
+</nav>
+
+<section>
+        <figure>
+            <img src="/cowboys.jpg" alt="Callbacks From Hell">
+        </figure>
+        <h1 class="title">Callbacks From Hell</h1>
+        <small>
+             
+             August 8, 2016
+        </small>
+        <br>
+        
+        <article class="article-container">
+            
+
+<p>Olá, pessoal! Nesse artigo vou falar sobre o famoso Callback Hell e como sair dele via Promises usando as melhores técnicas.</p>
+
+<p><img src="/artigos/callbacks-from-hell/cowboy.jpg" alt="Cowboys cavalgando num deserto texano" /></p>
+
+<p><strong>Atualização (05/11/2016): A nova versão 7 do NodeJS já suporta async/await, porém apenas usando a flag <code>--harmony</code> ao rodar o programa</strong></p>
+
+<p><strong>Atualização (22/04/2017): A partir da versão 7.6 do NodeJS o async/await já funciona sem a flag harmony</strong></p>
+
+<h2 id="antes-uma-introdução-a-callbacks">Antes, uma introdução a callbacks</h2>
+
+<p>Em desenvolvimento de software chamamos de <em>callback</em> funções que são passadas como argumento para outras funções, geralmente para serem
+executadas depois de algum processamento. Esse <em>callback</em> pode ser executado de forma síncrona ou assíncrona.</p>
+
+<p><strong>Síncrono</strong></p>
+
+<pre><code class="language-javascript">  function calculaICMS(valor) {
+    return valor * 0.19;
+  }
+
+  function calculaValorFinal(valor, callback) {
+    return valor + callback(valor);
+  }
+
+  var sacoLaranja = {
+    total: 25
+  };
+
+  calculaValorFinal(sacoLaranja.total, calculaICMS);
+</code></pre>
+
+<p>Observe que tudo é feito &ldquo;ao mesmo tempo&rdquo;. Essa abordagem é interessante do ponto de vista de design, permitindo facilmente
+colocar outra função calculadora de impostos.</p>
+
+<pre><code class="language-javascript">  function calculaIPI(produto) {
+    return produto.industrializado ? produto.total * 0.10
+        : 0;
+  }
+
+  function calculaValorFinal(produto, callback) {
+    return produto.total + callback(produto);
+  }
+
+  var cadeiraExecutiva = {
+    total: 100,
+    industrializado: true
+  };
+
+  calculaValorFinal(cadeiraExecutiva, calculaIPI);
+</code></pre>
+
+<p>É evidente que existem formas melhores de resolver esse tipo de problema. A grande questão neste cenário, é que a função
+<code>calculaValorFinal</code> não precisa conhecer qual função aplicadora de imposto será adicionada.</p>
+
+<p><strong>Assíncrono</strong></p>
+
+<p>Um callback do tipo assíncrono tem a ver com eventos que completam-se em um período de tempo <em>desconhecido</em>
+(leitura e escrita de arquivo, requisições de todos os tipos e processamento dinâmico). Por isso se passa um callback, que será uma função executada quando a tarefa for finalizada, com sucesso ou erro.</p>
+
+<pre><code class="language-javascript">getAccess(function() {
+  getUsers(function() {
+    createProduct({name: 'Mesa'}, function() {
+      deleteTemporaryUser(function() {
+        console.log('Finalmente terminou!');
+      });
+    });
+  });
+});
+
+</code></pre>
+
+<p>Esse tipo de abordagem é chamada de <em>Pyramid of Hell</em>, ou mais especificamente <em>Callback Hell</em>, que é o contínuo aninhamento de funções. Isso é considerado uma má prática que deixa o código com baixa manutenibilidade.</p>
+
+<h2 id="usando-promises">Usando Promises</h2>
+
+<p>Para melhorar essa abordagem usa-se <a href="https://promisesaplus.com/">Promises</a>, que nada mais é do que o retorno de um valor futuro.</p>
+
+<p>Em uma requisição HTTP por exemplo, não se sabe quando o retorno acontecerá. Então, para não bloquear o fluxo da aplicação, a Promise adia a execução da função <code>.then()</code> que é quando a Promise é <em>resolvida</em>.</p>
+
+<p>Criar uma Promise é muito facil, basta envolver o código que deseja adiar a execução com o bloco:</p>
+
+<pre><code class="language-javascript">return new Promise(function(resolve, reject) {
+  // Use a função resolve() quando quiser dizer que a Promise foi resolvida, ou reject() quando quiser explicitar
+  // um erro no fluxo
+});
+</code></pre>
+
+<p>Um exemplo na prática:</p>
+
+<pre><code class="language-javascript">function numeroPar(numero) {
+  return new Promise(function(resolve, reject)  {
+    setTimeout(function() {
+      if (numero % 2 === 0)
+        resolve();
+      else
+        reject(new Error('Não é um número par');
+    }, 2000);
+  });
+}
+</code></pre>
+
+<p>Imagine que essa função <code>numeroPar</code> é chamada quando alguém realiza um <em>GET</em> num servidor hipotético (por isso uso timeOut para simular uma demora na resposta).</p>
+
+<p>Se o número passado por parametro for par, causará a Promise <em>resolução</em>, caso contrário, retornará um erro, que cairá no <code>catch</code>:</p>
+
+<pre><code class="language-javascript">// localhost/numeroPar&amp;numero=2
+function getNumeroPar(res, req, next) {
+  numeroPar(req.params.numero).then(function(){
+    res.send('É par!');
+  })
+  .catch(function(){
+    res.send('É ímpar!');
+  });
+}
+
+</code></pre>
+
+<h2 id="nativo-vs-bibliotecas">Nativo vs Bibliotecas</h2>
+
+<p>Existem formas diferentes de se criar Promises. A Nativa do ES6 que mostrei acima e usando bibliotecas que estendem e melhoram funcionalidades. <strong>Recomendo</strong> o <a href="http://bluebirdjs.com/">Bluebird</a> com toda a força porque tem uma abordagem mais direta e é muito poderoso, além de ser usado pela maioria dos grandes e pequenos projetos.</p>
+
+<p>Existe também a <a href="https://github.com/kriskowal/q">q</a>.</p>
+
+<h2 id="filtered-catching">Filtered Catching</h2>
+
+<p>Há um recurso muito interessante que permite tratar os erros das promises da mesma forma que se trata exceções e de <em>forma controlada</em>! Essa funcionalidade pode ser usada com o bluebird.</p>
+
+<pre><code class="language-javascript">  // Suponha que temos uma função que tenta realizar um POST
+  // Dentro da função criaUsuario existe uma promise
+  // que rejeita com os erros devidos.
+  criaUsuario()
+    .then(function(usuario){
+      console.log('Usuário criado:', usuario);
+    })
+    .catch(PermissionDeniedError, function(error){
+      console.log('Credenciais incorretas');
+      // Faz tratamento para permissão negada...
+    })
+    .catch(UserAlreadyExists, function(error){
+      console.log(error.message);
+      // Faz tratamento específico para usuário já existe...
+    });
+</code></pre>
+
+<p>E as classes de erro ficam mais ou menos assim:</p>
+
+<pre><code class="language-javascript">class PermissionDeniedError extends Error {
+  constructor() {
+    super('Credenciais incorretas');
+    this.name = 'PermissionDeniedError';
+  }
+
+class UserAlreadyExists extends Error {
+  constructor() {
+    super('Usuário já existe');
+    this.name = 'UserAlreadyExists';
+  }
+</code></pre>
+
+<p>Eu criei um repositório teste para quem quiser ver na prática como funciona: <a href="https://github.com/raphaklaus/filtered-catching-promise">filtered-catching-promise</a></p>
+
+<h2 id="promisify">Promisify</h2>
+
+<p>É uma técnica incrível para transformar funções com assinatura de callback <code>function(error, data)</code> em promises.</p>
+
+<pre><code class="language-javascript">fs.readFile('example.json', function(error, data){
+  if (error) console.log(error.message);
+  console.log(data);
+})
+</code></pre>
+
+<p>Agora promisificado usando o bluebird:</p>
+
+<pre><code class="language-javascript">  var readFile = Promise.promisify(require(&quot;fs&quot;).readFile);
+
+  readFile('example.json')
+    .then(function(data){
+      console.log(data);
+    })
+    .catch(function(error){
+      console.log(error.message);
+      // E trata o erro...
+    });
+</code></pre>
+
+<h2 id="rodando-promises-em-série-e-obtendo-output-final">Rodando promises em série e obtendo output final</h2>
+
+<p>Há cenários que se precisa rodar x tarefas em série, ou seja, uma depois da outra (em ordem). Vou usar a notação de <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Arrow_functions">Arrow Functions</a> do ES6 que faz as coisas menos verbosas.</p>
+
+<pre><code class="language-javascript">  // Faça de conta que as funções abaixo existem.
+  // Elas são auto explicativas
+  uploadFile()
+    .then(result =&gt; getUploadedInfo(result))
+    .then(info =&gt; sendToAnalytics(info));
+</code></pre>
+
+<p>E também cenários que é necessário rodar tudo em paralelo, mas fazer algo no final, vá com o <code>Promise.all(array)</code></p>
+
+<pre><code class="language-javascript">  // Imagine que exista uma função promise que faz upload de
+  // arquivos chamada fazUpload()
+
+  var promiseArray = [];
+
+  for (var arquivo of arquivos) {
+    promiseArray.push(fazUpload(arquivo.data));
+  }
+
+  Promise.all(promiseArray).then(function(result){
+    console.log('Todos os arquivos foram enviados com sucesso!');
+  })
+</code></pre>
+
+<p>Simples, não? :)</p>
+
+<h2 id="performance">Performance</h2>
+
+<p>Promises se mal gerenciadas podem causar um gargalo absurdo na aplicação já que são mais custosas para processar do que callbacks puros. É bom ter cuidado com o número de promises pendentes no sistema.</p>
+
+<p>Uma forma facil de detectar esse tipo de problema em sua aplicação é observar o status de todas as promises, quais estão pendentes por mais tempo através da propriedade <code>isPending()</code> caso esteja usando o bluebird.</p>
+
+<h2 id="es7-async-await">ES7 async/await:</h2>
+
+<p>Pense nestas funcionalidades numa forma de escrever uma Promise da maneira mais inline possível. Isso faz parte do conjuntos de features das especificações do EcmaScript 7 e só está disponível usando <a href="https://babeljs.io/">Babel</a>. Vejam como fica uma requisição usando async/await</p>
+
+<pre><code class="language-javascript">  // É necessário marcar que a função é do tipo async
+  async getPosts() {
+    let posts = await request('/posts');
+    console.log('Aqui estão os posts', posts);
+  }
+</code></pre>
+
+<p>Explicando: Quando e onde essa função for invocada, no seu escopo interno ela ficará &ldquo;bloqueada&rdquo; por causa do await, esperando ele terminar para poder logar os posts. Já escopo externo, o fluxo não é interrompido e tudo continua correndo independente do que está acontecendo dentro da função async.</p>
+
+<p>Vou deixar um exemplo prático também: <a href="https://tonicdev.com/raphaklaus/async-await">https://tonicdev.com/raphaklaus/async-await</a></p>
+
+<p>Vale lembrar que async/await <strong>não substitui</strong> as Promises, mas trabalham em conjunto =)</p>
+
+<p>Bom, é isso! Espero que tenham apreciado esse apanhado geral sobre callbacks e Promises. Qualquer dúvida ou adição basta deixar seu comentário!</p>
+
+        </article>
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    (function () {
+        
+        
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'raphaklaus';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</body>
+</html>

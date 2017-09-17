@@ -1,24 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on My New Hugo Site</title>
-    <link>http://example.org/posts/</link>
-    <description>Recent content in Posts on My New Hugo Site</description>
+    <title>Posts on Raphael D. Pinheiro</title>
+    <link>http://raphaklaus.com/posts/</link>
+    <description>Recent content in Posts on Raphael D. Pinheiro</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 10 Aug 2017 01:59:23 -0300</lastBuildDate>
+    <language>en_US</language>
+    <lastBuildDate>Sun, 21 Aug 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://raphaklaus.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Uma história sobre gatos</title>
-      <link>http://example.org/posts/example/</link>
-      <pubDate>Thu, 10 Aug 2017 01:59:23 -0300</pubDate>
+      <title>Callbacks From Hell</title>
+      <link>http://raphaklaus.com/posts/callbacks-from-hell/</link>
+      <pubDate>Sun, 21 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/example/</guid>
-      <description>Cat &amp;lt;3   Cortado responsive piverate actionable insight earned media bootstrapping parallax latte unicorn disrupt pitch deck engaging. Grok SpaceTeam grok workflow agile hacker human-centered design Steve Jobs Steve Jobs. Engaging pivot personas ship it bootstrapping affordances food-truck actionable insight. Intuitive pivot user centered design Steve Jobs cortado piverate venture capital entrepreneur.
-Agile bootstrapping minimum viable product responsive grok integrate venture capital ship it intuitive pair programming personas.</description>
+      <guid>http://raphaklaus.com/posts/callbacks-from-hell/</guid>
+      <description>Olá, pessoal! Nesse artigo vou falar sobre o famoso Callback Hell e como sair dele via Promises usando as melhores técnicas.
+Atualização (05/11/2016): A nova versão 7 do NodeJS já suporta async/await, porém apenas usando a flag --harmony ao rodar o programa
+Atualização (22/04/2017): A partir da versão 7.6 do NodeJS o async/await já funciona sem a flag harmony
+Antes, uma introdução a callbacks Em desenvolvimento de software chamamos de callback funções que são passadas como argumento para outras funções, geralmente para serem executadas depois de algum processamento.</description>
+    </item>
+    
+    <item>
+      <title>Troubleshooting: A valuable skill</title>
+      <link>http://raphaklaus.com/posts/troubleshooting/</link>
+      <pubDate>Thu, 10 Mar 2016 23:39:48 +0000</pubDate>
+      
+      <guid>http://raphaklaus.com/posts/troubleshooting/</guid>
+      <description>Somewhere in time, you changed a line of code and then your feature or test just broke and you couldn&amp;rsquo;t manage to trace the problem? Or maybe you&amp;rsquo;ve installed a plugin and it didn&amp;rsquo;t work as intended. I&amp;rsquo;ll bring you some useful tips.
+There are some scenarios when this skill is valuable and for each, there is a different approach. Let&amp;rsquo;s put up some:
+You&amp;rsquo;re installing that new awesome framework.</description>
     </item>
     
   </channel>

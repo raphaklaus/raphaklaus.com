@@ -1,11 +1,19 @@
 baseURL = "http://raphaklaus.com"
 DefaultContentLanguage = "en"
-title = "raphaklaus"
-theme="minimax"
+title = "Raphael D. Pinheiro"
+theme = "minimax"
 disqusShortname = "raphaklaus"
+enableRobotsTXT = true
 
 [Languages]
 [Languages.en]
-languageName = "English"
+  languageName = "English"
+  languageCode = "en_US"
 [Languages.pt-br]
-languageName = "Portuguese"
+  languageName = "Portuguese"
+  languageCode = "pt_BR"
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"

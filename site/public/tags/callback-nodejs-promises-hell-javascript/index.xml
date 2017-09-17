@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Callback Nodejs Promises Hell Javascript on Raphael D. Pinheiro</title>
+    <link>http://raphaklaus.com/tags/callback-nodejs-promises-hell-javascript/</link>
+    <description>Recent content in Callback Nodejs Promises Hell Javascript on Raphael D. Pinheiro</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en_US</language>
+    <lastBuildDate>Sun, 21 Aug 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://raphaklaus.com/tags/callback-nodejs-promises-hell-javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Callbacks From Hell</title>
+      <link>http://raphaklaus.com/posts/callbacks-from-hell/</link>
+      <pubDate>Sun, 21 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://raphaklaus.com/posts/callbacks-from-hell/</guid>
+      <description>Olá, pessoal! Nesse artigo vou falar sobre o famoso Callback Hell e como sair dele via Promises usando as melhores técnicas.
+Atualização (05/11/2016): A nova versão 7 do NodeJS já suporta async/await, porém apenas usando a flag --harmony ao rodar o programa
+Atualização (22/04/2017): A partir da versão 7.6 do NodeJS o async/await já funciona sem a flag harmony
+Antes, uma introdução a callbacks Em desenvolvimento de software chamamos de callback funções que são passadas como argumento para outras funções, geralmente para serem executadas depois de algum processamento.</description>
+    </item>
+    
+  </channel>
+</rss>

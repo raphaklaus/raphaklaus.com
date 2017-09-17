@@ -2,6 +2,8 @@
 title: "Troubleshooting: você sabe como está o seu nível nesta habilidade?"
 date: 2016-03-10 23:39:48
 cover: /troubleshooting.jpg
+summary: "Já aconteceu de você modificar umas linhas de código e mais para frente o teste/funcionalidade quebrar e você não conseguir rastrear o que ocasionou?"
+tags: "Troubleshooting, Resolução de problemas"
 ---
 
 Já aconteceu de você modificar umas linhas de código e mais para frente o teste/funcionalidade quebrar e você não conseguir rastrear o que ocasionou?

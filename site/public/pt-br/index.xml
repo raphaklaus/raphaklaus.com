@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raphael D. Pinheiro</title>
+    <link>http://raphaklaus.com/pt-br/</link>
+    <description>Recent content on Raphael D. Pinheiro</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt_BR</language>
+    <lastBuildDate>Thu, 10 Mar 2016 23:39:48 +0000</lastBuildDate>
+    
+	<atom:link href="http://raphaklaus.com/pt-br/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Troubleshooting: você sabe como está o seu nível nesta habilidade?</title>
+      <link>http://raphaklaus.com/pt-br/posts/troubleshooting/</link>
+      <pubDate>Thu, 10 Mar 2016 23:39:48 +0000</pubDate>
+      
+      <guid>http://raphaklaus.com/pt-br/posts/troubleshooting/</guid>
+      <description>Já aconteceu de você modificar umas linhas de código e mais para frente o teste/funcionalidade quebrar e você não conseguir rastrear o que ocasionou?
+Ou então, instalar um novo plugin e não funcionar de jeito nenhum mesmo seguindo todos os passos da documentação? Vou deixar algumas dicas uteis nesse artigo.
+Existem diversos cenários em que essa habilidade é valiosa, e para cada um desses uma abordagem diferente deve ser tomada.</description>
+    </item>
+    
+  </channel>
+</rss>

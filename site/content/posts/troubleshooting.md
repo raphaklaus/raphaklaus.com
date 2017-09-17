@@ -1,8 +1,10 @@
 ---
-title: "Troubleshooting - A valuable skill"
+title: "Troubleshooting: A valuable skill"
 date: 2016-03-10 23:39:48
+update: 2017-09-16 00:00:00
 cover: /troubleshooting.jpg
 summary: "Somewhere in time, you changed a line of code and then your feature or test just broke and you couldn't manage to trace the problem? Or maybe you've installed a plugin and it didn't work as intended. I'll bring you some useful tips."
+tags: "Troubleshooting, Issue, Solving"
 ---
 
 Somewhere in time, you changed a line of code and then your feature or test just broke and you couldn't manage to trace the problem? Or maybe you've installed a plugin and it didn't work as intended. I'll bring you some useful tips.

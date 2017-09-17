@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://raphaklaus.com/pt-br/posts/troubleshooting/</loc>
+    <lastmod>2016-03-10T23:39:48+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://raphaklaus.com/pt-br/categories/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://raphaklaus.com/pt-br/posts/</loc>
+    <lastmod>2016-03-10T23:39:48+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://raphaklaus.com/pt-br/</loc>
+    <lastmod>2016-03-10T23:39:48+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://raphaklaus.com/pt-br/tags/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://raphaklaus.com/pt-br/tags/troubleshooting-resolu%C3%A7%C3%A3o-de-problemas/</loc>
+    <lastmod>2016-03-10T23:39:48+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

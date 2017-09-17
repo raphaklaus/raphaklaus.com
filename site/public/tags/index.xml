@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on My New Hugo Site</title>
-    <link>http://example.org/tags/</link>
-    <description>Recent content in Tags on My New Hugo Site</description>
+    <title>Tags on Raphael D. Pinheiro</title>
+    <link>http://raphaklaus.com/tags/</link>
+    <description>Recent content in Tags on Raphael D. Pinheiro</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en_US</language>
+    <lastBuildDate>Sun, 21 Aug 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://raphaklaus.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Callback Nodejs Promises Hell Javascript</title>
+      <link>http://raphaklaus.com/tags/callback-nodejs-promises-hell-javascript/</link>
+      <pubDate>Sun, 21 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://raphaklaus.com/tags/callback-nodejs-promises-hell-javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Troubleshooting Issue Solving</title>
+      <link>http://raphaklaus.com/tags/troubleshooting-issue-solving/</link>
+      <pubDate>Thu, 10 Mar 2016 23:39:48 +0000</pubDate>
+      
+      <guid>http://raphaklaus.com/tags/troubleshooting-issue-solving/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta property="title" content="Troubleshooting: você sabe como está o seu nível nesta habilidade?">
+    <meta property="description" content="Já aconteceu de você modificar umas linhas de código e mais para frente o teste/funcionalidade quebrar e você não conseguir rastrear o que ocasionou?
+Ou então, instalar um novo plugin e não funcionar de jeito nenhum mesmo seguindo todos os passos da documentação? Vou deixar algumas dicas uteis nesse artigo.
+Existem diversos cenários em que essa habilidade é valiosa, e para cada um desses uma abordagem diferente deve ser tomada.">
+    <meta property="type" content="website">
+    <meta property="url" content="http://raphaklaus.com/pt-br/posts/troubleshooting/">
+    <meta property="image" content="http://raphaklaus.com/troubleshooting.jpg">
+    <meta property="locale" content="pt_BR">
+    <meta property="tags" content="Troubleshooting, Resolução de problemas">
+    <meta property="article:published_time" content="2016-03-10 23:39:48 &#43;0000 UTC">
+    <meta property="article:modified_time" content="">
+    <meta property="article:tags" content="Troubleshooting, Resolução de problemas">
+    
+    
+    <meta property="og:title" content="Troubleshooting: você sabe como está o seu nível nesta habilidade?">
+    <meta property="og:description" content="Já aconteceu de você modificar umas linhas de código e mais para frente o teste/funcionalidade quebrar e você não conseguir rastrear o que ocasionou?
+Ou então, instalar um novo plugin e não funcionar de jeito nenhum mesmo seguindo todos os passos da documentação? Vou deixar algumas dicas uteis nesse artigo.
+Existem diversos cenários em que essa habilidade é valiosa, e para cada um desses uma abordagem diferente deve ser tomada.">
+    <meta property="og:type" content="article ">
+    <meta property="og:site_name" content="raphaklaus">
+    <meta property="og:url" content="http://raphaklaus.com/pt-br/posts/troubleshooting/">
+    <meta property="og:image" content="http://raphaklaus.com/troubleshooting.jpg">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:tags" content="">
+    <meta property="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="canonical" href="http://raphaklaus.com/pt-br/posts/troubleshooting/">
+
+    <title>Troubleshooting: você sabe como está o seu nível nesta habilidade? - Raphael D. Pinheiro </title>
+    
+    <link href="/css/font-face.css" rel="stylesheet">
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body class="container">
+
+<nav>
+    <div>
+        <a href="/posts">Posts</a>
+        <a href="/projects">Projects</a>
+        <a href="/talks">Talks</a>
+        <a href="/">About me</a>
+    </div>
+</nav>
+
+<section>
+        <figure>
+            <img src="/troubleshooting.jpg" alt="Troubleshooting: você sabe como está o seu nível nesta habilidade?">
+        </figure>
+        <h1 class="title">Troubleshooting: você sabe como está o seu nível nesta habilidade?</h1>
+        <small>
+             
+             March 3, 2016
+        </small>
+        <br>
+        
+        <small>Read in 
+            <span>
+                
+                <a href="http://raphaklaus.com/posts/troubleshooting/">English</a>
+                
+            </span>
+        </small>
+        
+        <article class="article-container">
+            
+
+<p>Já aconteceu de você modificar umas linhas de código e mais para frente o teste/funcionalidade quebrar e você não conseguir rastrear o que ocasionou?</p>
+
+<p>Ou então, instalar um novo plugin e não funcionar de jeito nenhum mesmo seguindo todos os passos da documentação? Vou deixar algumas dicas uteis nesse artigo.</p>
+
+<p>Existem diversos cenários em que essa habilidade é valiosa, e para cada um desses uma abordagem diferente deve ser tomada. Vou levantar alguns:</p>
+
+<p>Lá está você instalando aquele novo framework maravilhoso que vai resolver todos os seus problemas. Você segue todos os passos da documentação e dos tutoriais, porém não funciona.</p>
+
+<h2 id="entender-se-o-problema-é-específico-do-seu-ambiente">Entender se o problema é específico do seu ambiente</h2>
+
+<p>Por exemplo, no Linux alguns comandos precisam ser executados com <strong>su</strong> na frente. Esse tipo de detalhe pode ser o que faltava na documentação, e para fazer o seu sistema rodar.</p>
+
+<p>Entender se a documentação/tutorial foi pensada no seu ambiente atual é importante para tentar passar por cima dessas situações.</p>
+
+<h2 id="dica-de-ouro-pesquise-no-github">Dica de ouro: pesquise no GitHub</h2>
+
+<p>Uma das maneiras mais eficientes de se solucionar um problema é saber como alguém que teve sucesso fez.</p>
+
+
+<figure >
+    
+        <img src="/github-search.png" alt="Resultado de uma pesquisa do GitHub" />
+    
+    
+</figure>
+
+
+<p>Na parte superior esquerda do <a href="http://github.com">GitHub</a> tem um campo para busca. Use esse campo com os trechos referentes à ferramenta que está tendo problema e encontre milhares de códigos que também a usam. Assim você poderá ver se tem alguma diferença que faz esse código funcionar e o seu não. Pode até mesmo baixar o repositório e testar em seu ambiente!</p>
+
+<h2 id="o-mais-comum-você-pode-ter-mudado-algo-no-código-sem-perceber">O mais comum: você pode ter mudado algo no código sem perceber</h2>
+
+<p>Nessa situação, o melhor a se fazer é voltar a um ponto do código que você <strong>sabe</strong> que tudo funcionava conforme o esperado, e ir adicionando sua funcionalidade linha à linha. Em algum momento seu código vai quebrar e você estará mais perto de saber o porquê.</p>
+
+<p>Se você não entende o motivo da linha que causa o problema fazer seu código parar, é porque provavelmente é uma função que <strong>esconde comportamentos encapsulados</strong>. Você terá que compreender o que a função está fazendo. A melhor forma é abrir essa função e estudá-la, ou se for de terceiros (biblioteca, plugin, etc), procure a documentação na internet.</p>
+
+<h2 id="dependência-atualizada">Dependência atualizada</h2>
+
+<p>99% dos projetos utilizam dependências, e se você for minimamente organizado estará usando um gerenciador de dependências (packages.json, gemfile, etc).</p>
+
+<p>Às vezes a quebra vem de fora. Pode ser uma mudança de API, de parâmetro ou mesmo de estrutura. Recomendo <strong>sempre versionar</strong> o arquivo que guarda as dependências, e guardar a dependência <strong>com a versão citada explicitamente</strong>, assim você terá um histórico de alteração.</p>
+
+<p>Nunca subestime essa possibilidade, você pode perder muito tempo. Esse tipo de problema é muito comum em projetos com mais de 10 dependências.</p>
+
+<h2 id="seja-um-bom-debugger">Seja um bom debugger</h2>
+
+<p>Nem sempre é facil encontrar a causa do problema. Mas fica mais simples quando o desenvolvedor sabe usar as ferramentas certas. Use <strong>breakpoints</strong> em conjunto com <strong>watches</strong> e monitore o fluxo do código. É fundamental entender o que no seu sistema acontece <strong>em paralelo</strong> para poder monitorar esta área também.</p>
+
+<p>Se você se sente confiante em debugar com <code>alert</code> ou <code>console.log</code>, vá em frente. Mas sempre há a possibilidade disso sem querer subir para produção. Além do mais, uma ferramenta de debug dá ao desenvolvedor um ambiente muito mais preciso para localização de bugs e situações, como <strong>breakpoint condicional</strong> e visualização da <strong>call stack</strong>.</p>
+
+<h2 id="comece-do-zero">Comece do zero</h2>
+
+<p>Uma técnica que já me ajudou muito foi a de começar do zero. Ela consiste em pegar o grupo de código/ferramentas que está tentando fazer funcionar, abrir um projeto do zero e codificar de forma mais <strong>unitária</strong> possível, sem dependências desnecessárias, e usando só uma função.</p>
+
+<p>Dessa forma você estará mais seguro que não há conflitos externos ao <strong>conjunto mínimo funcional</strong> e consequentemente encontrará o problema.</p>
+
+<h2 id="não-fique-preso-dentro-da-caixa">Não fique preso dentro da caixa</h2>
+
+<p>Se você não consegue resolver, por que não muda para outra ferramenta? Não pode? Peça ajuda a algum amigo, pergunte no <a href="http://stackoverflow.com/">stackoverflow</a>, nos grupos de Facebook, ou no lindo <a href="https://github.com/frontendbr/forum/issues">Forum Front-End</a>.</p>
+
+<p>O que não pode é enlouquecer.</p>
+
+        </article>
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    (function () {
+        
+        
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'raphaklaus';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</body>
+</html>

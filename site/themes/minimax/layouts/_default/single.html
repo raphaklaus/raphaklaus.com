@@ -1,9 +1,6 @@
-{{ partial "head.html" }}
+{{ partial "head.html" . }}
 
-{{ define "Page.Title" }}
-{{ .Title }} – a {{ .Site.Title }} {{ end }}
-
-{{ partial "header.html" }}
+{{ partial "header.html" . }}
 
 <section>
         <figure>
